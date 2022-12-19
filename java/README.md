@@ -2,7 +2,6 @@
 
 ----
 
-
 + **1일차** 
     + 클래스 생성 및 print
     + 변수 타입 및 숫자 계산
@@ -15,23 +14,28 @@
 + **5일차**
     + 조건문 및 반복문 활용(알고리즘)
 + **6일차**
-    + 함수 만들기 및 2차원 배열, enum
+    + 함수 만들기 및 2차원 배열
+    + enum
 + **7일차**
     + 클래스 및 생성자 기초
 + **8일차**
     + 메소드
 + **9일차**
-    + 인스턴스 멤버와 this, 정적 멤버와 static, final 필드
+    + 인스턴스 멤버와 this
+    + 정적 멤버와 static
+    + final 필드
 + **10일차**
     + 패키지 및 접근 제한자
 + **11일차**
-    + Getter와 Setter 메소드, 어노테이션
+    + Getter와 Setter 메소드
+    + 어노테이션
 + **12일차**
     + 클래스 상속 기초 개념
 + **13일차**
     + super 및 protected 접근 제한자
 + **14일차**
-    + 자동 타입 변환, 강제 타입 변환
+    + 자동 타입 변환
+    + 강제 타입 변환
 + **15일차**
     + 추상 클래스
 + **16일차**
@@ -43,21 +47,31 @@
 + **19일차**
     + 예외처리
 + **20일차**
-    + Object 클래스(객체 비교, 해시코드, 문자 정보, 복제, 소멸자)
+    + Object 클래스
+    + 객체 비교, 해시코드, 문자 정보, 복제, 소멸자
 + **21일차**
-    + Objects 클래스(객체 비교, 널 여부 조사, 문자 정보), System 클래스
+    + Objects 클래스
+    + 객체 비교, 널 여부 조사, 문자 정보
+    + System 클래스
 + **22일차**
-    + Class 클래스, String 클래스
+    + Class 클래스
+    + String 클래스
 + **23일차**
-    + String 클래스, Arrays 클래스
+    + String 클래스
+    + Arrays 클래스
 + **24일차**
-    + Math, Random 클래스, Date, Calender 클래스, Format 클래스
+    + Math, Random 클래스
+    + Date, Calender 클래스
+    + Format 클래스
 + **25일차**
     + 제네릭
 + **26일차**
-    + List 컬렉션, ArrayList
+    + List 컬렉션
+    + ArrayList
 + **27일차**
-    + Set, Map 컬렉션, TreeSet, TreeMap, LIFO/FIFO
+    + Set, Map 컬렉션
+    + TreeSet, TreeMap
+    + LIFO/FIFO
 + **28일차**
     + 자바fx 기초 개념
 + **29일차**
