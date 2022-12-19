@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>야구 기록 관리 사이트</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: column;
+        }
+        .contents{
+            display: flex;
+            flex-direction: row;
+        }
+        header{
+            border-bottom: 1px solid gray;
+            padding-left: 50px;
+        }
+        footer{
+            border-top: 1px solid gray;
+            padding-left: 50px;
+        }
+        section nav{
+            border-right: 1px solid gray;
+        }
+        section aside{
+            border-left: 1px solid gray;
+            padding-left: 50px;
+        }
+        section main{
+            padding: 20px;
+        }
+        section nav, section aside{
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>야구 기록 관리</h1>
+        </header>
+
+        <section class="contents">
+            <nav>
+                <ul>
+                    <li><input type="button" id="team" value="팀 생성"></li>
+                    <li><input type="button" id="player" value="선수 생성"></li>
+                </ul>
+            </nav>
+            <main>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XcuShVQKoUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </main>
+            <aside>
+                <ul>
+                    <li><input type="button" id="record" value="기록 등록"></li>
+                    <li><input type="button" id="player-record" value="선수 기록"></li>
+                </ul>
+            </aside>
+        </section>
+        <footer>
+            <a href="http://www.gameone.kr">야구 기록 관련 홈페이지</a>
+        </footer>
+    </div>
+</body>
+</html>

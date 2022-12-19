@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				 "http://mybatis.org/dtd//mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.springboot.PostDAO">
+<insert id="insertContent">
+	insert into posting values(seq_post_id.nextval,#{param1},#{param2},#{param3},
+	to_char(sysdate,'YYYYMMDDHHMISS'),to_char(sysdate,'YYYYMMDDHHMISS')
+</insert>
+<select id="list" resultType="com.human.springboot.Posting">
+	select post_id, title, writer, created, updated from posting order by post_id
+</select>
+<select id="viewPosting" resultType="com.human.springboot.View">
+	select * from posting where post_id=#{param1}
+</select>
+<delete id="deletePosting">
+	delete from posting where post_id=#{param1}
+</delete>
+<update id="updatePosting">
+	update posting set title=#{param2}, content=#{param3}, updated=to_char(sysdate,'YYYYMMDDHHMISS') where post_id=#{param1}
+</update>
+</mapper>

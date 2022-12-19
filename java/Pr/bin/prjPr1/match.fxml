@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="424.0" prefWidth="100.0">
+         <children>
+            <Label text="팀 선택">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox prefWidth="150.0">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="600.0" spacing="15.0">
+               <children>
+                  <Label text="타순">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="선수명">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타석">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타수">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="1루타" />
+                  <Label text="2루타" />
+                  <Label text="3루타">
+                     <HBox.margin>
+                        <Insets right="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="홈런">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타점">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="득점">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="볼넷">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="사구">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="도루" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="1" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="2" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="3" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="4" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="5" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="6" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="7" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="8" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="9" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="424.0" prefWidth="100.0">
+         <children>
+            <Label text="팀 선택">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox prefWidth="150.0">
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </ComboBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="600.0" spacing="15.0">
+               <children>
+                  <Label text="타순">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="선수명">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타석">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타수">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="1루타" />
+                  <Label text="2루타" />
+                  <Label text="3루타">
+                     <HBox.margin>
+                        <Insets right="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="홈런">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="타점">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="득점">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="볼넷">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="사구">
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="도루" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="1" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="2" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="3" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="4" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="5" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="6" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="7" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="8" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <Label text="9" />
+                  <ComboBox prefHeight="23.0" prefWidth="59.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+                  <TextField prefHeight="23.0" prefWidth="36.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0" spacing="50.0">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" text="등록" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

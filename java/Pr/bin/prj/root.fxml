@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prj.RootController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="team" mnemonicParsing="false" onAction="#teamAddAction" text="팀 등록" />
+            <Button fx:id="player" mnemonicParsing="false" onAction="#playerAddAction" text="선수 등록" />
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="match" mnemonicParsing="false" onAction="#matchAddAction" text="경기 등록" />
+            <Button fx:id="records" mnemonicParsing="false" onAction="#playerRecordsAction" text="선수 기록" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="exit" mnemonicParsing="false" text="나가기" />
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

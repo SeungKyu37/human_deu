@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="50.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prjPr.RootController">
+   <children>
+      <TableView fx:id="myTableView" prefHeight="287.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="300.0" text="팀 이름" />
+          <TableColumn fx:id="regionColumn" minWidth="0.0" prefWidth="300.0" text="지역" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <TextField fx:id="teamName" promptText="팀 이름" />
+            <TextField fx:id="regionName" promptText="지역" />
+            <Button fx:id="teamAdd2" mnemonicParsing="false" text="추가" />
+            <Button fx:id="teamDel" mnemonicParsing="false" text="삭제" />
+         </children>
+      </HBox>
+      <Button fx:id="exitTeam" mnemonicParsing="false" prefHeight="6.0" prefWidth="55.0" text="나가기" />
+      <Pane prefHeight="45.0" prefWidth="600.0" />
+   </children>
+</VBox>

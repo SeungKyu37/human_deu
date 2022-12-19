@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButtonExam_김승규</title>
+    <script>
+        window.addEventListener("load", function(){
+            let btnAdd = window.document.getElementById("add");
+            btnAdd.onclick = function(){
+             let x,y;
+             x = parseInt(document.getElementById("txt1").value);  
+             y = parseInt(document.getElementById("txt2").value);     
+             sum.value = x+y;     
+    }
+});
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1" value="0" />
+    +
+    <input type="text" id="txt2" value="0" />
+    <input type="button" id="add" value="=" />
+    <input type="text" id="sum" value="0" />
+</body>
+</html>

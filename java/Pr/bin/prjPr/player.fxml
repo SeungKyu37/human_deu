@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prjPr.PlayerController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="153.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="팀 목록" />
+            <ComboBox fx:id="teamBox" prefWidth="150.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" prefHeight="300.0" prefWidth="496.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="선수 목록" />
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="132.0" text="이름" />
+                <TableColumn prefWidth="63.0" text="번호" />
+                  <TableColumn prefWidth="110.0" text="나이" />
+              </columns>
+               <VBox.margin>
+                  <Insets left="70.0" right="70.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField prefHeight="23.0" prefWidth="115.0" promptText="이름" />
+            <TextField prefHeight="23.0" prefWidth="67.0" promptText="번호" />
+            <TextField prefHeight="23.0" prefWidth="63.0" promptText="나이" />
+            <Button mnemonicParsing="false" text="추가" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
