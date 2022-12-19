@@ -34,3 +34,18 @@ JAVA
     인터페이스 기초 개념
 17일차
     인터페이스 구현
+18일차
+    인터페이스 활용
+19일차
+    예외처리
+20일차
+    Object 클래스(객체 비교, 해시코드, 문자 정보, 복제, 소멸자)
+21일차
+    Objects 클래스(객체 비교, 널 여부 조사, 문자 정보), System 클래스
+22일차
+    Class 클래스, String 클래스
+23일차
+    String 클래스, Arrays 클래스
+24일차
+     Math, Random 클래스, Date, Calender 클래스, Format 클래스
+
