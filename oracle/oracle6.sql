@@ -38,7 +38,7 @@ declare
 --    vn_emp_id employees.employee_id%type;
 --    cursor c1 (vn number)
 --    is
---        select employee_id,emp_name from employees where employee_id>vn; -- ¼±¾ð
+--        select employee_id,emp_name from employees where employee_id>vn; -- ì„ ì–¸
 begin
 --    for rec in c1(200)
     for rec in (select employee_id,emp_name, manager_id from employees where employee_id>200)
@@ -49,13 +49,13 @@ begin
         dbms_output.put_line(to_char(rec.employee_id)||' , '||rec.emp_name||' , '||m_name);
 --        dbms_output.put_line(to_char(rec.employee_id)||' , '||rec.emp_name);
     end loop;
---    open c1(200); -- ¿­±â(½ÇÇà)
+--    open c1(200); -- ì—´ê¸°(ì‹¤í–‰)
 --    loop
---        fetch c1 into vn_emp_id, vs_emp_name; -- »ç¿ë
+--        fetch c1 into vn_emp_id, vs_emp_name; -- ì‚¬ìš©
 --        exit when c1%notfound; 
 --        dbms_output.put_line(to_char(vn_emp_id) ||' , '|| vs_emp_name);
 --    end loop;
---    close c1; -- ´Ý±â
+--    close c1; -- ë‹«ê¸°
 end;
 /
 

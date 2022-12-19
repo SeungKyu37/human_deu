@@ -4,24 +4,24 @@ select employee_id eid,emp_name,salary,commission_pct pct,
         where commission_pct is not null;
         
         
---count() °¹¼ö
---sum() ÇÕ°è
---avg() Æò±Õ
---min()/max()   ÃÖ¼Ò°ª/ÃÖ´ë°ª
---variance()/stddev()   ºĞ»êµµ/Ç¥ÁØÆíÂ÷
+--count() ê°¯ìˆ˜
+--sum() í•©ê³„
+--avg() í‰ê· 
+--min()/max()   ìµœì†Œê°’/ìµœëŒ€ê°’
+--variance()/stddev()   ë¶„ì‚°ë„/í‘œì¤€í¸ì°¨
 select count(*), count(manager_id) from worker;
--- null°ªÀº Ä«¿îÆ® ¾ÈÇÑ´Ù.
+-- nullê°’ì€ ì¹´ìš´íŠ¸ ì•ˆí•œë‹¤.
 select sum(salary) from worker;
 select to_char(avg(salary),'99,999.99') avg from worker;
 select max(salary) from worker;
 
--- select ÄÃ·³¸í1, ... , ÄÃ·³¸ín, Áı°èÇÔ¼ö1, ... , Áı°èÇÔ¼ön
--- from Å×ÀÌºí¸í
--- group by ÄÃ·³¸í1, ... , ÄÃ·³¸ín
+-- select ì»¬ëŸ¼ëª…1, ... , ì»¬ëŸ¼ëª…n, ì§‘ê³„í•¨ìˆ˜1, ... , ì§‘ê³„í•¨ìˆ˜n
+-- from í…Œì´ë¸”ëª…
+-- group by ì»¬ëŸ¼ëª…1, ... , ì»¬ëŸ¼ëª…n
 select manager_id,count(*) cnt,sum(salary) total,to_char(avg(salary),'99,999.99') avg_sal
 from worker
 group by manager_id;
-select department_id ºÎ¼­ID,count(*) cnt
+select department_id ë¶€ì„œID,count(*) cnt
     from worker
     group by department_id
     having count(*)>1
@@ -62,54 +62,54 @@ order by salary_level;
 create table exp_goods_asia (
 country varchar2(10),seq number,goods varchar2(80));
 desc exp_goods_asia;
-insert into exp_goods_asia values('ÇÑ±¹',1,'¿øÀ¯Á¦¿Ü ¼®À¯·ù');
-insert into exp_goods_asia values('ÇÑ±¹',2,'ÀÚµ¿Â÷');
-insert into exp_goods_asia values('ÇÑ±¹',3,'ÀüÀÚÁıÀûÈ¸·Î');
-insert into exp_goods_asia values('ÇÑ±¹',4,'¼±¹Ú');
-insert into exp_goods_asia values('ÇÑ±¹',5,'LCD');
-insert into exp_goods_asia values('ÇÑ±¹',6,'ÀÚµ¿Â÷ºÎÇ°');
-insert into exp_goods_asia values('ÇÑ±¹',7,'ÈŞ´ëÀüÈ­');
-insert into exp_goods_asia values('ÇÑ±¹',8,'È¯½ÄÅºÈ­¼ö¼Ò');
-insert into exp_goods_asia values('ÇÑ±¹',9,'¹«¼±¼Û½Å±â µğ½ºÇÃ·¹ÀÌ ºÎ¼ÓÇ°');
-insert into exp_goods_asia values('ÇÑ±¹',10,'Ã¶ ¶Ç´Â ºñÇÕ±İ°­');
-insert into exp_goods_asia values('ÀÏº»',1,'ÀÚµ¿Â÷');
-insert into exp_goods_asia values('ÀÏº»',2,'ÀÚµ¿Â÷ºÎÇ°');
-insert into exp_goods_asia values('ÀÏº»',3,'ÀüÀÚÁıÀûÈ¸·Î');
-insert into exp_goods_asia values('ÀÏº»',4,'¼±¹Ú');
-insert into exp_goods_asia values('ÀÏº»',5,'¹İµµÃ¼¿şÀÌÆÛ');
-insert into exp_goods_asia values('ÀÏº»',6,'È­¹°Â÷');
-insert into exp_goods_asia values('ÀÏº»',7,'¿øÀ¯Á¦¿Ü ¼®À¯·ù');
-insert into exp_goods_asia values('ÀÏº»',8,'°Ç¼³±â°è');
-insert into exp_goods_asia values('ÀÏº»',9,'´ÙÀÌ¿Àµå,Æ®·£Áö½ºÅÍ');
-insert into exp_goods_asia values('ÀÏº»',10,'±â°è·ù');
+insert into exp_goods_asia values('í•œêµ­',1,'ì›ìœ ì œì™¸ ì„ìœ ë¥˜');
+insert into exp_goods_asia values('í•œêµ­',2,'ìë™ì°¨');
+insert into exp_goods_asia values('í•œêµ­',3,'ì „ìì§‘ì íšŒë¡œ');
+insert into exp_goods_asia values('í•œêµ­',4,'ì„ ë°•');
+insert into exp_goods_asia values('í•œêµ­',5,'LCD');
+insert into exp_goods_asia values('í•œêµ­',6,'ìë™ì°¨ë¶€í’ˆ');
+insert into exp_goods_asia values('í•œêµ­',7,'íœ´ëŒ€ì „í™”');
+insert into exp_goods_asia values('í•œêµ­',8,'í™˜ì‹íƒ„í™”ìˆ˜ì†Œ');
+insert into exp_goods_asia values('í•œêµ­',9,'ë¬´ì„ ì†¡ì‹ ê¸° ë””ìŠ¤í”Œë ˆì´ ë¶€ì†í’ˆ');
+insert into exp_goods_asia values('í•œêµ­',10,'ì²  ë˜ëŠ” ë¹„í•©ê¸ˆê°•');
+insert into exp_goods_asia values('ì¼ë³¸',1,'ìë™ì°¨');
+insert into exp_goods_asia values('ì¼ë³¸',2,'ìë™ì°¨ë¶€í’ˆ');
+insert into exp_goods_asia values('ì¼ë³¸',3,'ì „ìì§‘ì íšŒë¡œ');
+insert into exp_goods_asia values('ì¼ë³¸',4,'ì„ ë°•');
+insert into exp_goods_asia values('ì¼ë³¸',5,'ë°˜ë„ì²´ì›¨ì´í¼');
+insert into exp_goods_asia values('ì¼ë³¸',6,'í™”ë¬¼ì°¨');
+insert into exp_goods_asia values('ì¼ë³¸',7,'ì›ìœ ì œì™¸ ì„ìœ ë¥˜');
+insert into exp_goods_asia values('ì¼ë³¸',8,'ê±´ì„¤ê¸°ê³„');
+insert into exp_goods_asia values('ì¼ë³¸',9,'ë‹¤ì´ì˜¤ë“œ,íŠ¸ëœì§€ìŠ¤í„°');
+insert into exp_goods_asia values('ì¼ë³¸',10,'ê¸°ê³„ë¥˜');
 select * from exp_goods_asia order by goods;
-select goods from exp_goods_asia where country='ÇÑ±¹'
+select goods from exp_goods_asia where country='í•œêµ­'
 intersect
-select goods from exp_goods_asia where country='ÀÏº»';
-select goods from exp_goods_asia where country='ÇÑ±¹'
+select goods from exp_goods_asia where country='ì¼ë³¸';
+select goods from exp_goods_asia where country='í•œêµ­'
 union
-select goods from exp_goods_asia where country='ÀÏº»';
-select goods from exp_goods_asia where country='ÇÑ±¹'
+select goods from exp_goods_asia where country='ì¼ë³¸';
+select goods from exp_goods_asia where country='í•œêµ­'
 union all
-select goods from exp_goods_asia where country='ÀÏº»' order by goods;
-select goods from exp_goods_asia where country='ÇÑ±¹'
+select goods from exp_goods_asia where country='ì¼ë³¸' order by goods;
+select goods from exp_goods_asia where country='í•œêµ­'
 minus
-select goods from exp_goods_asia where country='ÀÏº»';
-select goods from exp_goods_asia where country='ÀÏº»'
+select goods from exp_goods_asia where country='ì¼ë³¸';
+select goods from exp_goods_asia where country='ì¼ë³¸'
 minus
-select goods from exp_goods_asia where country='ÇÑ±¹';
-(select goods from exp_goods_asia where country='ÇÑ±¹'
+select goods from exp_goods_asia where country='í•œêµ­';
+(select goods from exp_goods_asia where country='í•œêµ­'
 union
-select goods from exp_goods_asia where country='ÀÏº»')
+select goods from exp_goods_asia where country='ì¼ë³¸')
 minus
-(select goods from exp_goods_asia where country='ÇÑ±¹'
+(select goods from exp_goods_asia where country='í•œêµ­'
 intersect
-select goods from exp_goods_asia where country='ÀÏº»');
+select goods from exp_goods_asia where country='ì¼ë³¸');
 
 
--- select A.º¸°í ½ÍÀº Ä®·³¸í,A.º¸°í ½ÍÀº Ä®·³¸í,B.º¸°í ½ÍÀº Ä®·³¸í
+-- select A.ë³´ê³  ì‹¶ì€ ì¹¼ëŸ¼ëª…,A.ë³´ê³  ì‹¶ì€ ì¹¼ëŸ¼ëª…,B.ë³´ê³  ì‹¶ì€ ì¹¼ëŸ¼ëª…
 -- from A,B 
--- where A.°°Àº Ä®·³¸í = B.°°Àº Ä®·³¸í
+-- where A.ê°™ì€ ì¹¼ëŸ¼ëª… = B.ê°™ì€ ì¹¼ëŸ¼ëª…
 select worker.emp_name, departments.department_name
 from worker, departments
 where worker.department_id=departments.department_id;
@@ -123,9 +123,9 @@ select distinct prod_id from sales order by prod_id;
 
 select * from roomtype;
 select * from roominfo;
-insert into roominfo values(101,'Áö¸®»ê',2,7,1500);
-insert into roominfo values(102,'¼³¾Ç»ê',4,8,1800);
-insert into roominfo values(103,'ÇÑ¶ó»ê',3,5,1600);
+insert into roominfo values(101,'ì§€ë¦¬ì‚°',2,7,1500);
+insert into roominfo values(102,'ì„¤ì•…ì‚°',4,8,1800);
+insert into roominfo values(103,'í•œë¼ì‚°',3,5,1600);
 
 select a.num, a.name, b.typename, a.howmany, a.howmuch
 from roominfo a, roomtype b

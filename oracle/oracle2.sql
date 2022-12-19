@@ -7,10 +7,10 @@ city varchar2(20)
 );
 desc person;
 
---±âº»Å°(Primaey key)
---1. Å×ÀÌºí ÇÏ³ª´ç ¿ÀÁ÷ ÇÏ³ª¸¸ Á¸ÀçÇÑ´Ù. µÎ°³ÀÌ»ó ºÒ°¡. ±âº»Å° ¾ø´Â Å×ÀÌºíÀº °¡´É
---2. Å°°ªÀº ÀüÃ¼ ÄÃ·³À» ÅëÆ²¾î¼­ À¯ÀÏÇØ¾ß(Uniqueness)
---3. Å°°ªÀº nullÀ» ³ÖÀ» ¼ö ¾ø´Ù.(Not Null)
+--ê¸°ë³¸í‚¤(Primaey key)
+--1. í…Œì´ë¸” í•˜ë‚˜ë‹¹ ì˜¤ì§ í•˜ë‚˜ë§Œ ì¡´ì¬í•œë‹¤. ë‘ê°œì´ìƒ ë¶ˆê°€. ê¸°ë³¸í‚¤ ì—†ëŠ” í…Œì´ë¸”ì€ ê°€ëŠ¥
+--2. í‚¤ê°’ì€ ì „ì²´ ì»¬ëŸ¼ì„ í†µí‹€ì–´ì„œ ìœ ì¼í•´ì•¼(Uniqueness)
+--3. í‚¤ê°’ì€ nullì„ ë„£ì„ ìˆ˜ ì—†ë‹¤.(Not Null)
 
 create table roomtype(
 typenum number(3) primary key,
@@ -30,14 +30,14 @@ insert into roomtype values(1,'Suite Room', null);
 insert into roomtype values(2,'Deluxe Room', null);
 insert into roomtype values(3,'Family Room', null);
 select * from roomtype;
-insert into roominfo values(100,'¹éµÎ»ê',1,6,1200);
+insert into roominfo values(100,'ë°±ë‘ì‚°',1,6,1200);
 select * from roominfo;
-insert into roominfo values(100,'ÇÑ¶ó»ê',4,6,1200);
+insert into roominfo values(100,'í•œë¼ì‚°',4,6,1200);
 
--- »èÁ¦°ü·Ã
--- delete from - data only ºÏ±¸°¡´É(rollback)
--- truncate table - data only º¹±¸ºÒ°¡´É
--- drop table - data+schema º¹±¸ºÒ°¡´É
+-- ì‚­ì œê´€ë ¨
+-- delete from - data only ë¶êµ¬ê°€ëŠ¥(rollback)
+-- truncate table - data only ë³µêµ¬ë¶ˆê°€ëŠ¥
+-- drop table - data+schema ë³µêµ¬ë¶ˆê°€ëŠ¥
 
 create view under_five as select * from worker where salary < 5000;
 select * from under_five;
@@ -52,13 +52,13 @@ desc roomtype;
 select * from roomtype;
 insert into roomtype values(seq_id.nextval,'Standard Room',null);
 select emp_name||','||salary from worker;
--- ÀÌ¸§ : ¸Å´ÏÀú»ç¹ø, ¿ù±Ş
+-- ì´ë¦„ : ë§¤ë‹ˆì €ì‚¬ë²ˆ, ì›”ê¸‰
 select emp_name||':'||manager_id||','||salary from worker;
 
---»ê¼ú¿¬»êÀÚ : +,-,*,/,||
---ºñ±³¿¬»êÀÚ : =,!=,<>,>,<,>=,<=, is null, us not null
---³í¸®¿¬»êÀÚ : and, or, not
---ÁıÇÕ¿¬»êÀÚ : ±³ÁıÇÕ(intersect), ÇÕÁıÇÕ(union, union all) Â÷ÁıÇÕ(minus)
+--ì‚°ìˆ ì—°ì‚°ì : +,-,*,/,||
+--ë¹„êµì—°ì‚°ì : =,!=,<>,>,<,>=,<=, is null, us not null
+--ë…¼ë¦¬ì—°ì‚°ì : and, or, not
+--ì§‘í•©ì—°ì‚°ì : êµì§‘í•©(intersect), í•©ì§‘í•©(union, union all) ì°¨ì§‘í•©(minus)
 
 select 1+5 from dual;
 
@@ -68,11 +68,11 @@ select emp_name,employee_id, salary,
         else 'A'
     end as salary_level
 from worker;
---salary>=10000: º»ºÎÀå±Ş, 6000<=salary<10000: ÆÀÀå±Ş, 6000<salary: ÆÀ¿ø±Ş
+--salary>=10000: ë³¸ë¶€ì¥ê¸‰, 6000<=salary<10000: íŒ€ì¥ê¸‰, 6000<salary: íŒ€ì›ê¸‰
 select emp_name,employee_id, salary,
-    case when salary<6000 then 'ÆÀ¿ø±Ş'
-        when salary>=6000 and salary < 10000 then 'ÆÀÀå±Ş'
-        else 'º»ºÎÀå±Ş'
+    case when salary<6000 then 'íŒ€ì›ê¸‰'
+        when salary>=6000 and salary < 10000 then 'íŒ€ì¥ê¸‰'
+        else 'ë³¸ë¶€ì¥ê¸‰'
     end as salary_level
 from worker;
 select emp_name, salary from worker where salary between 4000 and 6000;
@@ -88,19 +88,19 @@ select lower(emp_name) from worker;
 select upper(emp_name) from worker;
 select concat(emp_name,',') from worker;
 
---substr(¹®ÀÚ¿­,½ÃÀÛÀÎµ¦½º[,±æÀÌ])
---½ÃÀÛÀÎµ¦½º´Â 1ºÎÅÍ ½ÃÀÛ
+--substr(ë¬¸ìì—´,ì‹œì‘ì¸ë±ìŠ¤[,ê¸¸ì´])
+--ì‹œì‘ì¸ë±ìŠ¤ëŠ” 1ë¶€í„° ì‹œì‘
 select substr('good morning',6,4) from dual;
 select substr('good morning',-3) from dual;
 select emp_name from worker where substr(emp_name,-3)='son';
 select emp_name from worker where emp_name like '%son';
-select substrb('ABCDEFG',1,4), substrb('°¡³ª´Ù¶ó¸¶¹Ù»ç',1,4) from dual;
+select substrb('ABCDEFG',1,4), substrb('ê°€ë‚˜ë‹¤ë¼ë§ˆë°”ì‚¬',1,4) from dual;
 select emp_name from worker where emp_name like 'John%';
 select replace (emp_name,' ','') from worker where emp_name like '%%';
 
--- instr(¹®ÀÚ¿­,Ã£À»¹®ÀÚ¿­,½ÃÀÛÀÎµ¦½º,ÃâÇöÈ½¼ö)
--- ¹®ÀÚ¿­¿¡¼­ 'Ã£À»¹®ÀÚ¿­'ÀÌ ³ªÅ¸³ª´Â À§Ä¡ÀÇ ÀÎµ¦½º ¹øÈ£(¸øÃ£À¸¸é 0)
-select instr('³»°¡ ¸¸¾à ¿Ü·Î¿ï ¶§¸é, ³»°¡ ¸¸¾à ±«·Î¿ï ¶§¸é, ³»°¡ ¸¸¾à Áñ°Å¿ï ¶§¸é','¸¸¾à',5,2)from dual;
+-- instr(ë¬¸ìì—´,ì°¾ì„ë¬¸ìì—´,ì‹œì‘ì¸ë±ìŠ¤,ì¶œí˜„íšŸìˆ˜)
+-- ë¬¸ìì—´ì—ì„œ 'ì°¾ì„ë¬¸ìì—´'ì´ ë‚˜íƒ€ë‚˜ëŠ” ìœ„ì¹˜ì˜ ì¸ë±ìŠ¤ ë²ˆí˜¸(ëª»ì°¾ìœ¼ë©´ 0)
+select instr('ë‚´ê°€ ë§Œì•½ ì™¸ë¡œìš¸ ë•Œë©´, ë‚´ê°€ ë§Œì•½ ê´´ë¡œìš¸ ë•Œë©´, ë‚´ê°€ ë§Œì•½ ì¦ê±°ìš¸ ë•Œë©´','ë§Œì•½',5,2)from dual;
 select instr('John Wick','Joe') from dual;
 select length('good morning vietnam') from dual;
 select emp_name,length(emp_name) from worker;
@@ -113,13 +113,13 @@ select to_char(salary,'99,999') from worker;
 select sysdate,systimestamp from dual;
 select to_char(sysdate,'yyyy-mm-dd HH24:MI:SS') from dual;
 
-select to_char(sysdate,'PM HH')||'½Ã '||to_char(sysdate,'MI')||'ºĞ '||to_char(sysdate,'SS')||'ÃÊ' ½Ã°£ from dual;
+select to_char(sysdate,'PM HH')||'ì‹œ '||to_char(sysdate,'MI')||'ë¶„ '||to_char(sysdate,'SS')||'ì´ˆ' ì‹œê°„ from dual;
 
---nvl(ÄÃ·³/µ¥ÀÌÅÍ, ¼ıÀÚ): ÄÃ·³/µ¥ÀÌÅÍ°¡ nullÀÌ¸é ¼ıÀÚ·Î Ç¥½Ã, ¾Æ´Ï¸é ±×´ë·Î ÀÚÃ¼ Ç¥½Ã
+--nvl(ì»¬ëŸ¼/ë°ì´í„°, ìˆ«ì): ì»¬ëŸ¼/ë°ì´í„°ê°€ nullì´ë©´ ìˆ«ìë¡œ í‘œì‹œ, ì•„ë‹ˆë©´ ê·¸ëŒ€ë¡œ ìì²´ í‘œì‹œ
 select * from student;
 select name,gender,school_name,grade_num,mobile,nvl(math_score,0),nvl(english_score,0),nvl(korean_score,0) from student;
 
---nullif(Ç¥Çö½Ä1, Ç¥Çö½Ä2):Ç¥Çö½Ä1==Ç¥Çö½Ä2ÀÌ¸é, nullÃâ·Â, ´Ù¸£¸é Ç¥Çö½Ä1À» Ãâ·Â
+--nullif(í‘œí˜„ì‹1, í‘œí˜„ì‹2):í‘œí˜„ì‹1==í‘œí˜„ì‹2ì´ë©´, nullì¶œë ¥, ë‹¤ë¥´ë©´ í‘œí˜„ì‹1ì„ ì¶œë ¥
 select employee_id,
         to_char(start_date,'yyyy'),
         to_char(end_date,'yyyy'),

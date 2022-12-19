@@ -3,7 +3,7 @@ from employees a, employees b
 where a.manager_id=b.employee_id
 order by a.employee_id;
 
-select a.department_id, a.department_name, b.department_name »óÀ§ºÎ¼­
+select a.department_id, a.department_name, b.department_name ìƒìœ„ë¶€ì„œ
 from departments a, departments b
 where a.parent_id=b.department_id;
 
@@ -19,11 +19,11 @@ where a.department_id=b.department_id
 and a.salary>6000
 order by a.salary;
 
--- ANSI¹®¹ı
+-- ANSIë¬¸ë²•
 select a.employee_id, a.emp_name, a.salary, b.department_name parent_name
 from employees a inner join departments b
-on a.department_id=b.department_id  --Á¶ÀÎÁ¶°Ç
-where a.salary>6000 --ÇÊÅÍ¸µÁ¶°Ç
+on a.department_id=b.department_id  --ì¡°ì¸ì¡°ê±´
+where a.salary>6000 --í•„í„°ë§ì¡°ê±´
 order by a.salary;
 
 select a.employee_id, a.emp_name, a.salary, b.department_name parent_name
@@ -42,7 +42,7 @@ and a.employee_id in(select employee_id from employees where salary>6000);
 
 
 select * from departments;
-select a.employee_id, a.emp_name, b.emp_name manager, c.department_name, d.emp_name ºÎ¼­Àå
+select a.employee_id, a.emp_name, b.emp_name manager, c.department_name, d.emp_name ë¶€ì„œì¥
 from employees a, employees b, departments c, employees d
 where a.manager_id=b.employee_id
 and a.department_id=c.department_id
@@ -55,7 +55,7 @@ where a.department_id=b.department_id
 group by b.department_name
 order by b.department_name;
 
-select a.emp_name, count(*) ÀÎ¿ø¼ö
+select a.emp_name, count(*) ì¸ì›ìˆ˜
 from employees a, departments b, employees c
 where b.manager_id=a.employee_id
 and c.department_id = b.department_id
@@ -63,7 +63,7 @@ group by a.emp_name
 order by a.emp_name;
 
 select * from employees;
-select b.department_name, count(*) ÀÎ¿ø¼ö, sum(a.salary) ¿ù±ŞÇÕ°è
+select b.department_name, count(*) ì¸ì›ìˆ˜, sum(a.salary) ì›”ê¸‰í•©ê³„
 from employees a, departments b
 where a.department_id = b.department_id
 group by b.department_name
@@ -73,12 +73,12 @@ select a.employee_id, a.emp_name, b.emp_name manager_name
 from employees a, employees b
 where a.manager_id=b.employee_id(+);
 
-select a.department_id, a.department_name, b.department_name »óÀ§ºÎ¼­
+select a.department_id, a.department_name, b.department_name ìƒìœ„ë¶€ì„œ
 from departments a, departments b
 where a.parent_id=b.department_id(+);
 
 -- only in MySQL
-select a.department_id, a.department_name, b.department_name »óÀ§ºÎ¼­
+select a.department_id, a.department_name, b.department_name ìƒìœ„ë¶€ì„œ
 from departments a left outer join departments b
 on a.parent_id=b.department_id;
 
@@ -92,28 +92,28 @@ drop view v_six;
 select * from v_six order by emp_name;
 
 select emp_name, salary from employees where salary>(select avg(salary) from employees) order by salary;
--- subquery¿¡´Â order by »ç¿ëÇÒ ¼ö ¾ø´Ù.
+-- subqueryì—ëŠ” order by ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤.
 
-select a.emp_name,b.department_name,c.emp_name ºÎ¼­Àå
+select a.emp_name,b.department_name,c.emp_name ë¶€ì„œì¥
 from employees a, departments b, employees c
 where a.department_id=b.department_id
-and b.department_name like '%ºÎ'
+and b.department_name like '%ë¶€'
 and b.manager_id=c.employee_id(+);
 
 select x.emp_name, x.department_name, y.emp_name captain
 from (select a.emp_name, a.manager_id, b.manager_id captain_id, b.department_name
       from employees a, departments b  
       where a.department_id=b.department_id
-      and b.department_name like '%ºÎ') x, employees y
-where x.department_name like '%ºÎ'
+      and b.department_name like '%ë¶€') x, employees y
+where x.department_name like '%ë¶€'
 and x.captain_id=y.employee_id(+)
 order by x.emp_name;
 
-select a.emp_name,b.department_name,c.emp_name ºÎ¼­Àå
+select a.emp_name,b.department_name,c.emp_name ë¶€ì„œì¥
 from employees a, 
     (select department_id,department_name, manager_id captain_id
     from departments
-    where department_name like '%ºÎ')b,
+    where department_name like '%ë¶€')b,
     employees c
 where a.department_id=b.department_id
 and captain_id=c.employee_id(+);
@@ -121,7 +121,7 @@ and captain_id=c.employee_id(+);
 select a.emp_name, b.department_name, c.emp_name captain
 from employees a, departments b, employees c
 where a.department_id in
-    (select department_id from departments where department_name like '%ºÎ')
+    (select department_id from departments where department_name like '%ë¶€')
     and a.department_id=b.department_id(+)
     and b.manager_id=c.employee_id;
 

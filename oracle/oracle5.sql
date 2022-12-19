@@ -1,8 +1,8 @@
--- code block(ÀÍ¸í(anonymous, unnamed))
+-- code block(ìµëª…(anonymous, unnamed))
 declare
  vi_num NUMBER;
  vi_char CHAR(20);
- pi CONSTANT number:=3.14; -- »ó¼ö
+ pi CONSTANT number:=3.14; -- ìƒìˆ˜
 begin
  vi_num:=100;
  vi_char:='Hello World';
@@ -21,11 +21,11 @@ begin
     select employee_id, emp_name
     into v_employee_id, vs_emp_name
     from employees where employee_id=145;
-    dbms_output.put_line('»ç¹ø='||to_char(v_employee_id)||', ÀÌ¸§='||vs_emp_name);
+    dbms_output.put_line('ì‚¬ë²ˆ='||to_char(v_employee_id)||', ì´ë¦„='||vs_emp_name);
 end;
 /
 
-declare --Á¶ÀÎ
+declare --ì¡°ì¸
     vs_dep_name departments.department_name%type;
     v_cap_id departments.manager_id%type;
     v_cap_name employees.emp_name%type;
@@ -35,10 +35,10 @@ begin
     from departments a, employees b 
     where a.department_id=80
     and a.manager_id=b.employee_id;
-    dbms_output.put_line('ºÎ¼­¸í='||vs_dep_name||', ºÎ¼­Àå »ç¹ø='||to_char(v_cap_id)||', ºÎ¼­Àå ÀÌ¸§='||v_cap_name);
+    dbms_output.put_line('ë¶€ì„œëª…='||vs_dep_name||', ë¶€ì„œì¥ ì‚¬ë²ˆ='||to_char(v_cap_id)||', ë¶€ì„œì¥ ì´ë¦„='||v_cap_name);
 end;
 /
-declare -- Á¶ÀÎÀ» ¾È¾²´Â ¹ı
+declare -- ì¡°ì¸ì„ ì•ˆì“°ëŠ” ë²•
     vs_dep_name departments.department_name%type;
     v_cap_id departments.manager_id%type;
     v_cap_name employees.emp_name%type;
@@ -51,7 +51,7 @@ begin
     from employees
     where employee_id=v_cap_id;
     
-    dbms_output.put_line('ºÎ¼­¸í='||vs_dep_name||', ºÎ¼­Àå »ç¹ø='||to_char(v_cap_id)||', ºÎ¼­Àå ÀÌ¸§='||v_cap_name);
+    dbms_output.put_line('ë¶€ì„œëª…='||vs_dep_name||', ë¶€ì„œì¥ ì‚¬ë²ˆ='||to_char(v_cap_id)||', ë¶€ì„œì¥ ì´ë¦„='||v_cap_name);
 end;
 /
 
@@ -61,7 +61,7 @@ declare
 begin
     vn_did := round(dbms_random.value(10,110),-1);
     select salary into vn_salary from employees where department_id=vn_did 
-    and rownum=1; -- ÀÇ»çÄ®·³
+    and rownum=1; -- ì˜ì‚¬ì¹¼ëŸ¼
     dbms_output.put_line(to_char(vn_did));
     
     if vn_salary between 1 and 3000 then
@@ -82,7 +82,7 @@ declare
 begin
     vn_did := round(dbms_random.value(10,110),-1);
     select salary into vn_salary from employees where department_id=vn_did 
-    and rownum=1; -- ÀÇ»çÄ®·³
+    and rownum=1; -- ì˜ì‚¬ì¹¼ëŸ¼
     dbms_output.put_line(to_char(vn_did));
     
     case 
@@ -163,7 +163,7 @@ begin
     from employees
     where employee_id=v_cap_id;
     
-    dbms_output.put_line('ºÎ¼­¸í='||vs_dep_name||', ºÎ¼­Àå »ç¹ø='||to_char(v_cap_id)||', ºÎ¼­Àå ÀÌ¸§='||v_cap_name);
+    dbms_output.put_line('ë¶€ì„œëª…='||vs_dep_name||', ë¶€ì„œì¥ ì‚¬ë²ˆ='||to_char(v_cap_id)||', ë¶€ì„œì¥ ì´ë¦„='||v_cap_name);
 end;
 /
 exec department_info(110);

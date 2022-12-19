@@ -10,13 +10,13 @@ korean_score number(3)
 );
 desc student;
 
---C(µ¥ÀÌÅÍ»ı¼º/Ãß°¡)insert
---insert into Å×ÀÌºí¸í values (°ª1, °ª2, ... ,°ªn);
---insert into Å×ÀÌºí¸í(Ä®·³¸í1, Ä®·³¸í2, ... ,Ä®·³¸ín); values (°ª1, °ª2, ... ,°ªn);
+--C(ë°ì´í„°ìƒì„±/ì¶”ê°€)insert
+--insert into í…Œì´ë¸”ëª… values (ê°’1, ê°’2, ... ,ê°’n);
+--insert into í…Œì´ë¸”ëª…(ì¹¼ëŸ¼ëª…1, ì¹¼ëŸ¼ëª…2, ... ,ì¹¼ëŸ¼ëª…n); values (ê°’1, ê°’2, ... ,ê°’n);
 insert into student values ('John','M','WestLake',6,null,null,null,null);
 insert into student values ('Jane','F','RiverWest',5,null,null,null,null);
 insert into student(name,gender,school_name,grade_num) values ('Jacob','M','RiverEast',6);
-insert into student values ('±è½Â±Ô','M','µ¿¾çÁß',3,null,null,null,null);
+insert into student values ('ê¹€ìŠ¹ê·œ','M','ë™ì–‘ì¤‘',3,null,null,null,null);
 insert into student values ('Greg','M','RiverNorth',2,null,null,null,null);
 insert into student values ('James','M','SouthLake',3,null,null,null,null);
 insert into student values ('Suzi','F','RiverWest',1,null,null,null,null);
@@ -24,20 +24,20 @@ insert into student values ('Kane','M','RiverNorth',6,null,null,null,null);
 insert into student values ('Harry','M','WestLake',2,null,null,null,null);
 insert into student values ('Emma','F','RiverEast',4,null,null,null,null);
 -- ''==null
---insert into Å×ÀÌºí¸í set ÄÃ·³¸í1=°ª1, ÄÃ·³¸í2=°ª2, ... , ÄÃ·³¸ín=°ªn(mySQL, mariaDB¿¡¼­ °¡´É)
---R(µ¥ÀÌÅÍÁ¶È¸) select
+--insert into í…Œì´ë¸”ëª… set ì»¬ëŸ¼ëª…1=ê°’1, ì»¬ëŸ¼ëª…2=ê°’2, ... , ì»¬ëŸ¼ëª…n=ê°’n(mySQL, mariaDBì—ì„œ ê°€ëŠ¥)
+--R(ë°ì´í„°ì¡°íšŒ) select
 select * from student;
---U(µ¥ÀÌÅÍ¼öÁ¤) update
+--U(ë°ì´í„°ìˆ˜ì •) update
 update student set gender='M' where name = 'Harry';
 update student set mobile='-' where mobile is null;
 update student set math_score=-1,english_score=-1,korean_score=-1 where grade_num=6;
---update Å×ÀÌºí¸í set ÄÃ·³¸í1=°ª1, ÄÃ·³¸í2=°ª2, ... , ÄÃ·³¸ín=°ªn where ÄÃ·³¸í=°ª
---D(µ¥ÀÌÅÍ»èÁ¦) delete
+--update í…Œì´ë¸”ëª… set ì»¬ëŸ¼ëª…1=ê°’1, ì»¬ëŸ¼ëª…2=ê°’2, ... , ì»¬ëŸ¼ëª…n=ê°’n where ì»¬ëŸ¼ëª…=ê°’
+--D(ë°ì´í„°ì‚­ì œ) delete
 commit;
 rollback;
 delete from student where grade_num < 4;
---delete from Å×ÀÌºí¸í where ÄÃ··¸í = °ª;
---Æ¯Á¤ ÄÃ·³ÀÇ °ªÀÌ Æ¯Á¤°ªÀÎ ·¹ÄÚµå(row,line)¸¦ Áö¿î´Ù.
+--delete from í…Œì´ë¸”ëª… where ì»¬ë ëª… = ê°’;
+--íŠ¹ì • ì»¬ëŸ¼ì˜ ê°’ì´ íŠ¹ì •ê°’ì¸ ë ˆì½”ë“œ(row,line)ë¥¼ ì§€ìš´ë‹¤.
 --delete from student where mobile is null;
 
 
@@ -45,7 +45,7 @@ delete from student where grade_num < 4;
 create table worker as select * from employees;
 select * from worker;
 commit;
---worker Å×ÀÌºí¿¡¼­ manager_id°¡ nullÀÎ »ç¶÷ÀÇ ¿ù±Ş(salary)À» 30000À¸·Î º¯°æ(update)
+--worker í…Œì´ë¸”ì—ì„œ manager_idê°€ nullì¸ ì‚¬ëŒì˜ ì›”ê¸‰(salary)ì„ 30000ìœ¼ë¡œ ë³€ê²½(update)
 update worker set salary='30000' where manager_id is null;
---manager_id°¡ 124ÀÎ »ç¶÷ÀÇ Ä¿¹Ì¼ÇÆÛ¼¾Æ¼Áö¸¦ 0.25·Î º¯°æ
+--manager_idê°€ 124ì¸ ì‚¬ëŒì˜ ì»¤ë¯¸ì…˜í¼ì„¼í‹°ì§€ë¥¼ 0.25ë¡œ ë³€ê²½
 update worker set commission_pct=0.25 where manager_id =124;
