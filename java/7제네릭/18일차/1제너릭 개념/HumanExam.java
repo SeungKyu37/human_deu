@@ -26,7 +26,7 @@ public class HumanExam {
 		int intValue = (int) list1.get(2);
 		System.out.println("intValue : " + intValue);
 		
-		// 2. 제네릭은 처음부터 감딜 데이터의 타입을 제한하는 것을 의미함,
+		// 2. 제네릭은 처음부터 담길 데이터의 타입을 제한하는 것을 의미함,
 		List <String> list2 = new ArrayList<String>();
 		// list2라는 배열변수에 String 타입만 우선 담기는 것을 재한함.
 		list2.add("human3");

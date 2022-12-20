@@ -7,7 +7,7 @@ public class A {
 	 void method2() {
 			System.out.println("public method2 실행");
 	 }
-	 void method3() {
+	 private void method3() {
 			System.out.println("public method3 실행");
 	 }
 	 
