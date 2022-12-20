@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 핸들링</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function(){
+        // 2개의 이벤트 중 한개라도 발생하면 function을 수행.
+            $(".btn1 a").on("click mouseout", function(){
+                
+                $(".btn1").next("ul").hide();
+                // ul 태그 모두 숨기고
+                
+                let ts = $(this);
+                // this는 선택되어진 객체. 즉, 선택되어진 p 또는 a
+                // ts.css("background-color","yellow");
+
+                ts.parent().next().show();
+           });
+       });
+    </script>
+</head>
+<body>
+    <p class="btn1">
+        <a href="#">이벤트 대상1</a>
+    </p>
+    <ul style="display: none">
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+
+    <p class="btn1">
+        <a href="#">이벤트 대상2</a>
+    </p>
+    <ul>
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+    </ul>
+</body>
+</html>

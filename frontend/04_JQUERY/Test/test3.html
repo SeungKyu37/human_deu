@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // '시작'버튼을 누르면, 0.5초간격으로 txtNumber에 1부터 10까지만 출력
+        // setInterval, clearInterval, 전역변수
+        let i=1;
+        $(document)
+        .on('click', '#btnStart', function(){
+            g=setInterval(function(){
+                $('#txtNumber').val(i++);
+                if($('#txtNumber').val()==10){
+                    clearInterval(g);
+                    $('#txtNumber').val('10');
+                }
+            },500);
+           })
+    </script>
+</head>
+<body>
+    <input type="text" id="txtNumber"><br><br>
+    <button id="btnStart">시작</button>
+</body>
+</html>

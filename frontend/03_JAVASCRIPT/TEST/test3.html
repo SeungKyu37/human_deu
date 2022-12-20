@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+            <script>
+            $(document)
+            .ready(function(){
+                $("#dvHotel").tabs();
+            })
+        </script>
+        <script>
+            arRoom=[];
+            arRoomBooked=[];
+            $(document)
+            .on('click','#add',function(){
+               let roomNum = $('#roomNum').val();
+               let roomName = $('#roomName').val();
+               if($('#roomNum').val()=="" || $('#roomName').val()==""){
+                alert("값을 입력하라");
+               }else{
+                let found = false;
+                $('#room option').each(function(){
+                    if($(this).val()==roomNum){
+                        found = true;
+                        return false;
+                    }
+                });
+                if(found){
+                    $('#room option[value='+roomNum+']').text(roomName);
+                    $('#roomName2 option[value='+roomNum+']').text(roomName);
+                }else{
+               $('#room').append("<option value="+roomNum+">"+roomName+"</option>");
+               $('#roomName2').append("<option value="+roomNum+">"+roomName+"</option>");
+               $('#roomNum').val("");
+               $('#roomName').val("");
+                }
+               }
+            })
+            .on('click','#room',function(){
+                let roomNum = $('#room option:selected').val();
+                let roomName = $('#room option:selected').text();
+                $('#roomNum').val(roomNum);
+                $('#roomName').val(roomName);
+            })
+            .on('click','#del',function(){
+                let result = confirm("지우시겠습니까?");
+                if(result){
+                $('#room option:selected').remove();
+                $('#roomNum').val("");
+                $('#roomName').val("");
+                $('#roomName2 option:selected').remove();
+            }
+                else{}
+            })
+            .on('click','#add2',function(){
+                let roomNum = $('#roomName2 option:selected').val();
+                let roomNum2 =  $('#roomNum2').val();
+                let roomName = $('#roomName2 option:selected').text();
+                let roomName3 = $('#roomName3').val();
+                let qty = $('#qty').val();
+                let price = $('#price').val(); 
+                flag = false;
+                for(i=0; i<arRoom.length; i++){
+                    roominfo=arRoom[i];
+                    if(roominfo['num']==$('#roomNum2').val()){
+                        arRoom[i]['type']=$('#roomName2 option:selected').text();
+                        arRoom[i]['name']=$('#roomName3').val();
+                        arRoom[i]['qty']=parseInt($('#qty').val());
+                        arRoom[i]['price']=parseInt($('#price').val());
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag==false){
+                roominfo={};
+                roominfo['num']=$('#roomNum2').val();
+                roominfo['type']=roomName;
+                roominfo['name']=$('#roomName3').val();
+                roominfo['qty']=parseInt($('#qty').val());
+                roominfo['price']=parseInt($('#price').val());
+                arRoom.push(roominfo);
+                }
+                if($('#qty').val()=="" || $('#price').val()=="" || $('#roomName3').val()==""){
+                alert("값을 입력하라");
+               }else{
+                let found = false;
+                $('#room2 option').each(function(){
+                    if($(this).val()==roomNum2){
+                        found = true;
+                        return false;
+                    }
+                });
+                if(found){
+                    $('#room2 option[value='+roomNum2+']').text(roomName3+" "+roomName+" x"+" "+qty+" "+price);
+                }else{
+                $('#room2').append("<option value="+roomNum2+">"+roomName3+" "+roomName+" x"+" "+qty+" "+price+"</option>");
+                $('#roomNum2').val("");
+                $('#roomName3').val("");
+                $('#qty').val("");
+                $('#price').val("");            
+                }
+               }
+            })
+            .on('click','#room2',function(){
+                let str = $('#room2 option:selected').text();
+                let ar = str.split(' ');
+                let roomNum2 = $('#room2 option:selected').val();
+                $('#roomNum2').val(roomNum2);
+                $('#roomName3').val(ar[0]);
+                $('#qty').val(ar[3]);
+                $('#price').val(ar[4]);
+
+            })
+            .on('click','#del2',function(){
+                let result = confirm("지우시겠습니까?");
+                if(result){
+                $('#room2 option:selected').remove();
+                $('#roomNum2').val("");
+                $('#roomName3').val("");
+                $('#qty').val("");
+                $('#price').val("");
+            }
+                else{}
+            })
+            .on('mouseout','#dateEnd1',function(){
+                let dateStart1 = $('#dateStart1').val();
+                let dateEnd1 = $('#dateEnd1').val();
+                let now = new Date();
+                let dateStart = new Date(dateStart1);
+                let dateEnd = new Date(dateEnd1);
+                let dateDiff = Math.ceil((dateEnd.getTime()-dateStart.getTime())/(1000*3600*24));
+                let dateDiff2 = Math.ceil((dateEnd.getTime()-now.getTime())/(1000*3600*24));
+                if(dateDiff<=0){
+                    alert("날짜를 다시 선택하라");
+                    $('#dateEnd1').val("");
+                }
+                if(dateDiff2<=-1){
+                    alert("날짜를 다시 선택하라");
+                    $('#dateEnd1').val("");
+                }
+            })
+            .on('mouseout','#dateStart1',function(){
+                let dateStart1 = $('#dateStart1').val();
+                let dateEnd1 = $('#dateEnd1').val();
+                let now = new Date();
+                let dateStart = new Date(dateStart1);
+                let dateEnd = new Date(dateEnd1);
+                let dateDiff2 = Math.ceil((dateStart.getTime()-now.getTime())/(1000*3600*24));
+                if(dateDiff2<=-1){
+                    alert("날짜를 다시 선택하라");
+                    $('#dateStart1').val("");
+                }
+            })
+            .on('click','#search',function(){
+                $('#room3 option').remove();
+                n=parseInt($('#pNum1').val());
+                let dateStart1 = $('#dateStart1').val();
+                let dateEnd1 = $('#dateEnd1').val();
+                let dateStart2 = $('#dateStart2').val();
+                let dateEnd2 = $('#dateEnd2').val();
+                let str = $('#room4').text();
+                let ar = str.split(' ');
+                let dateStart3 = ar[0];
+                let dateEnd3 = ar[2];
+                for(i=0; i<arRoom.length; i++){
+                    roominfo = arRoom[i];
+                    if(roominfo['qty']>=n){
+                        let str = '<option value='+roominfo['num']+'>'+roominfo['name']+' '+roominfo['type']+' '+'x'+' '+
+                            roominfo['qty']+' '+roominfo['price']+'</option>';
+                            if(dateStart1 == dateStart3 && dateEnd1 == dateEnd3){
+                            }else{
+                            $('#room3').append(str);
+                            }
+                    }
+                }
+            })
+            .on('click','#room3 option',function(){
+                let str = $('#room3 option:selected').text();
+                let ar = str.split(' ');
+                let roomNum3 = $('#room3 option:selected').val();
+                let qty = $('#pNum1').val();
+                let dateStart1 = $('#dateStart1').val();
+                let dateEnd1 = $('#dateEnd1').val();
+                let dateStart = new Date(dateStart1);
+                let dateEnd = new Date(dateEnd1);
+                let dateDiff = Math.ceil((dateEnd.getTime()-dateStart.getTime())/(1000*3600*24));
+
+                $('#roomNum3').val(roomNum3);
+                $('#roomName4').val(ar[1]);
+                $('#roomName5').val(ar[0]);
+                $('#pNum2').val(qty);
+                $('#dateStart2').val(dateStart1);
+                $('#dateEnd2').val(dateEnd1);
+                $('#allPrice').val(ar[4]*dateDiff);
+            })
+            .on('click','#add3',function(){
+                for(i=0; i<arRoomBooked.length; i++){
+                    roominfo1=arRoomBooked[i];
+                    if(roominfo1['num']==$('#roomNum3').val()){
+                        arRoomBooked[i]['type']=$('#roomName4').val();
+                        arRoomBooked[i]['name']=$('#roomName5').val();
+                        arRoomBooked[i]['qty']=parseInt($('#pNum2').val());
+                        arRoomBooked[i]['dateStart']=$('#dateStart2').val();
+                        arRoomBooked[i]['dateEnd']=$('#dateEnd2').val();
+                        arRoomBooked[i]['price']=parseInt($('#allprice').val());
+                        arRoomBooked[i]['pName']=$('#pName').val();
+                        arRoomBooked[i]['mobile']=$('#mobile').val();
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag==false){
+                        roominfo1={};
+                        arRoomBooked[i]['num']=$('#roomNum3').val();
+                        arRoomBooked[i]['type']=$('#roomName4').val();
+                        arRoomBooked[i]['name']=$('#roomName5').val();
+                        arRoomBooked[i]['qty']=parseInt($('#pNum2').val());
+                        arRoomBooked[i]['dateStart']=$('#dateStart2').val();
+                        arRoomBooked[i]['dateEnd']=$('#dateEnd2').val();
+                        arRoomBooked[i]['price']=parseInt($('#allprice').val());
+                        arRoomBooked[i]['pName']=$('#pName').val();
+                        arRoomBooked[i]['mobile']=$('#mobile').val();
+                        arRoom.push(roominfo1);
+                }
+                console.log(roominfo1);
+
+                let roomNum = $('#roomNum3').val();
+                let roomtype = $('#roomName4').val();
+                let roomName = $('#roomName5').val();
+                let qty = $('#pNum2').val();
+                let dateStart = $('#dateStart2').val();
+                let dateEnd = $('#dateEnd2').val();
+                let price = $('#allPrice').val();
+                let pName = $('#pName').val();
+                let mobile = $('#mobile').val();
+                $('#room4').append("<option value="+roomNum+">"+dateStart+" "+"~"+" "+dateEnd+" "+roomName+" x"+" "+qty+" "+price+" "+pName+" "+mobile+" "+roomtype+"</option>");
+                $('#clear').trigger('click');
+            })
+            .on('click','#clear',function(){
+                $('#roomNum3').val("");
+                $('#roomName4').val("");
+                $('#roomName5').val("");
+                $('#pNum2').val("");
+                $('#dateStart2').val(dateStart1);
+                $('#dateEnd2').val(dateEnd1);
+                $('#allPrice').val("");
+                $('#pName').val("");
+                $('#mobile').val("");
+            })
+            .on('click','#room4',function(){
+                let str = $('#room4 option:selected').text();
+                let ar = str.split(' ');
+                let roomNum = $('#room4').val();
+                $('#roomNum3').val(roomNum);
+                $('#roomName4').val(ar[9]);
+                $('#roomName5').val(ar[3]);
+                $('#pNum2').val(ar[5]);
+                $('#dateStart2').val(ar[0]);
+                $('#dateEnd2').val(ar[2]);
+                $('#allPrice').val(ar[6]);
+                $('#pName').val(ar[7]);
+                $('#mobile').val(ar[8]);
+            })
+            .on('click','#del3',function(){
+                $('#room4 option:selected').remove();
+                $('#clear').trigger('click');
+            })
+        </script>
+        <style>
+            #dvHotel {
+                width: 1100px; height: 600px; margin: auto;
+            }
+            #hotel0 {
+                width: 700px; height: 520px; margin: auto;
+            }
+            #hotel1 {
+                width: 700px; height: 520px; margin: 0; margin: auto;
+            }
+            #hotel2 {
+                width: 1000px; height: 520px; margin: auto;
+            }
+            #room{width: 300px; height: 400px; font-size: 20px;}
+            #room2{width: 300px; height: 400px; font-size: 15px;}
+            #room3{width: 250px; height: 350px; font-size: 15px;}
+            #room4{width: 250px; height: 450px; font-size: 15px;}
+            #b{height: 50px;}
+            #qty{width: 50px;}
+            #div{border: 1px solid black; width: 300px; height: 500px;}
+        </style>
+</head>
+<body align="center">
+    <h1>호텔관리 시스템</h1>
+    <div id="dvHotel">
+        <ul>
+            <li><a href="#hotel0">객실종류관리</a></li>
+            <li><a href="#hotel1">객실관리</a></li>
+            <li><a href="#hotel2">예약관리</a></li>
+        </ul>
+        <div id="hotel0">
+            <table>
+                <tr>
+                    <td><label style="padding-right: 230px; font-weight: bold;">객실종류</label><br>
+                    <select multiple id="room"></select></td>
+                    <td style="padding-left: 50px;"><label>객실종류번호</label>
+                        <input type="text" id="roomNum"><br><br>
+                        <label>객실종류명</label>
+                        <input type="text" id="roomName"><br><br>
+                        <button id="add">등록</button>
+                        <button id="del">삭제</button>
+            </tr>
+            </table>
+        </div>
+        <div id="hotel1">
+            <table>
+                <tr>
+                    <td><label style="padding-right: 230px; font-weight: bold;">객실목록</label><br>
+                    <select multiple id="room2"></select></td>
+                    <td style="padding-left: 50px;"><label>객실번호</label>
+                        <input id="roomNum2" type="text"><br><br>
+                        <label>객실종류명</label>
+                        <select id="roomName2" style="width: 200px; height: 25px;"></select><br><br>
+                        <label>객실명</label>
+                        <input id="roomName3" type="text"><br><br>
+                        <label>숙박가능인원</label>
+                        <input id="qty" type="text">
+                        <label style="padding-right: 100px;">명</label><br><br>
+                        <label>1박 요금</label>
+                        <input id="price" type="text">
+                        <label>원</label><br><br>
+                        <label>비고</label>
+                        <input id="b" type="text"><br><br>
+                        <button id="add2">등록</button>
+                        <button id="del2">삭제</button>
+                </tr>
+            </table>
+        </div>
+        <div id="hotel2">
+            <table>
+                <tr>
+                    <td>
+                        <label style="padding-right: 200px;">예약가능목록</label>
+                        <div id="div" style="padding-top: 10px;">
+                        <label>숙박기간</label>
+                        <input type="date" id="dateStart1" style="width: 100px;"><label>~</label><input type="date" id="dateEnd1" style="width: 100px;"><br><br>
+                        <label>숙박인원</label>
+                        <input type="text" id="pNum1" style="width: 100px;">
+                        <label>명  </label><button id="search" style="margin-left: 20px;">찾기</button><br><br>
+                        <label style="padding-right: 180px;">객실목록</label><br>
+                        <select multiple id="room3"></select></div></td>
+                    <td style="padding-left: 50px;">
+                        <label style="padding-right: 230px;">세부내역</label>
+                        <div id="div" style="padding-top: 10px;">
+                        <label>객실번호</label>
+                        <input type="text" id="roomNum3" style="width: 100px;" readonly><br><br>
+                        <label>객실종류명</label>
+                        <input type="text" id="roomName4" style="width: 100px;" readonly><br><br>
+                        <label>객실명</label>
+                        <input type="text" id="roomName5" style="width: 100px;" readonly><br><br>
+                        <label>숙박예정인원</label>
+                        <input type="text" id="pNum2" style="width: 100px;" readonly><br><br>
+                        <label>숙박기간</label>
+                        <input type="date" id="dateStart2" style="width: 110px;" readonly><label>~</label><br><br><input type="date" id="dateEnd2" style="width: 110px;" readonly><br><br>
+                        <label>총비용</label>
+                        <input type="text" id="allPrice" style="width: 100px;">
+                        <label>원</label><br><br>
+                        <label>예약자명</label>
+                        <input type="text" id="pName" style="width: 100px;"><br><br>
+                        <label>모바일번호</label>
+                        <input type="text" id="mobile" style="width: 100px;"><br><br>
+                        <button id="add3">예약등록</button>
+                        <button id="clear">비우기</button>
+                        <button id="del3">예약취소</button></div></td>
+                    <td>
+                        <label style="padding-right: 150px;">예약완료목록</label>
+                        <div id="div" style="margin-left: 50px; padding-top: 10px;">
+                        <label style="padding-right: 150px;">예약객실목록</label><br>
+                        <select multiple id="room4"></select></div></td>
+                    </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+    <style>
+        li{
+            font-size: 40px;font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            <a onclick="document.querySelector('article').innerHTML=' <h1>HTML 소개</h1><P>HTML is... Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quod sunt consequatur, dolorum voluptatem perspiciatis non, fuga ab tempore dignissimos enim minima? Eligendi impedit velit consectetur, nesciunt nostrum dolor doloribus? </P>';">
+                HTML 소개
+            </a>
+        </li>
+        <li>
+            <a onclick="document.querySelector('article').innerHTML=' <h1>CSS 소개</h1><P>CSS is... Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quod sunt consequatur, dolorum voluptatem perspiciatis non, fuga ab tempore dignissimos enim minima? Eligendi impedit velit consectetur, nesciunt nostrum dolor doloribus? </P>';">
+                CSS 소개
+            </a>
+        </li>
+        <li>
+            <a onclick="document.querySelector('article').innerHTML=' <h1>JAVASCRIPT 소개</h1><P>JAVASCRIPT is... Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quod sunt consequatur, dolorum voluptatem perspiciatis non, fuga ab tempore dignissimos enim minima? Eligendi impedit velit consectetur, nesciunt nostrum dolor doloribus? </P>';">
+                JAVASCRIPT 소개
+            </a>
+        </li>
+        <li>
+            <a onclick="document.querySelector('article').innerHTML=' <h1>JQuery 소개</h1><P>JQuery is... Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quod sunt consequatur, dolorum voluptatem perspiciatis non, fuga ab tempore dignissimos enim minima? Eligendi impedit velit consectetur, nesciunt nostrum dolor doloribus? </P>';">
+                JQuery 소개
+            </a>
+        </li>
+    </ol>
+    <article>
+
+    </article>
+</body>
+</html>

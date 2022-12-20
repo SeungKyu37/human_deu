@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document)
+        .on('click','#btnGo',function(){
+            // let a=$('#selCountry').val();
+            // a=a+", "+$('#selCountry option:selected').text();
+            // $('#first').text(a);
+            // let b=$('#txtPost').val();
+            // $('#second').text(b);
+            $('#selCountry').append('<option value="FL">Finland</option>');
+            $('#txtPost').val('Hello World\nGood Morning Vietnam\nPlaza Singapura\nMarina sands Hotel');
+        })
+    </script>
+    <style>
+        label {background-color: aqua; color: red; width: 120px;}
+    </style>
+</head>
+<body>
+    <select id="selCountry" size="10">
+        <option value="KR">Korea, Republic Of</option>
+        <option value="US">USA</option>
+        <option value="SG">Singapore</option>
+        <option value="DE">Germany</option>
+        <option value="UK">United Kingdom</option>
+    </select><br><br>
+    <textarea id="txtPost" rows="5" cols="30"></textarea><br><br>
+    <button id="btnGo">Get Data</button><br><br>
+    <label id="first"></label><br><br>
+    <label id="second"></label><br><br>
+</body>
+</html>

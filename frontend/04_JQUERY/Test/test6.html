@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<style>
+    td{width: 50px; height: 50px; text-align: center;}
+    .bgRed{background-color: red;}
+    .bgBlue{background-color: blue;}
+</style>
+<body id="body">
+    <button id="btnDraw">테이블 그리기</button>
+    <label id="lblIndex"></label>
+</body>
+<script>
+    $(document)
+    .on('click','td',function(){
+        let n = $(this).parent().index();
+        let m = $(this).index();
+        $('#lblIndex').text(m+", "+n);
+    if($(this).hasClass('bgRed')){
+        $(this).removeClass('bgRed');
+        $(this).addClass('bgBlue');
+    } else{
+        $(this).removeClass('bgBlue');
+        $(this).addClass('bgRed');
+    }
+        return false;
+    })
+    .on('click','#btnDraw',function(){
+        let str=prompt('숫자를 입력하시오');
+        let N = parseInt(str);
+        let i=0, j=0;
+        // NxN의 테이블을 그린다.
+       $('#btnDraw').before('<table border=1></table>');
+       for(i=0;i<N;i++){
+        $('table').append('<tr></tr>');
+       }
+       for(i=0; i<N; i++){
+        for(j=0; j<N; j++){
+            $('table tr:eq('+i+')').append('<td></td>');
+        }
+       }
+
+    //    str='';  
+    // for(i=0; i<N; i++){
+    //     str+='<tr>';
+    //     for(j=0; j<N; j++){
+    //         str+='<td></td>';
+    //     }
+    //     str+='</tr>';
+    // }
+    // $('table').append(str);
+
+//             let a=0, b=0; c=1;
+//         for(a=0;a<N;a++){
+//             if(a%2==0){
+//             for(b=0;b<N;b++){
+//         $('table tr:eq('+a+') td:eq('+b+')').text(c++);
+//             }
+//         }
+//             if(a%2==1){
+//             for(b=N-1;b>=0;b--){
+//                 $('table tr:eq('+a+') td:eq('+b+')').text(c++);
+//             }
+//     }
+// }   
+    })
+</script>
+</html>

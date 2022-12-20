@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document)
+        .on('click','#btnPlus',function(){
+            let n = $('#txtNum').val(); //"5"
+            if(isNaN(n)){
+                $('#result').val("더하기 불가");
+            } else{
+            n=parseInt(n)+1;  // "5"+1
+            $('#result').val(n);
+            }
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="txtNum"><br><br><br>
+    <button id="btnPlus">+1</button><br><br><br>
+    <input type="text" id="result">
+</body>
+</html>

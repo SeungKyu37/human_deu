@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정렬(오름차순)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        let ar=[12, 7, 3, 1, 9, 10, 5];
+        $(document)
+        .ready(function(){
+            display('#lbl1');
+        })
+        .on('click','#btnSort',function(){
+            for(i=0; i<ar.length; i++){
+                for(j=i+1; j<ar.length; j++){
+                    if(ar[i]>ar[j]){
+                        temp = ar[i];
+                        ar[i] = ar[j];
+                        ar[j] = temp;
+                    }
+                }
+            }
+            display('#lbl2');
+        });
+
+        function display(selector){
+            let str=''; 
+            for(i=0; i<ar.length; i++){
+                str+=' '+ar[i];
+            }
+            $(selector).text(str);
+        }
+    </script>
+</head>
+<body>
+    <label id="lbl1"></label><br><br>
+    <button id="btnSort">정렬</button><br><br>
+    <label id="lbl2"></label><br><br>
+</body>
+</html>

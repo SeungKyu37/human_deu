@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효과 및 애니메이션</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        *{
+            /* *은 모든 태그를 의미함. */
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 20px;
+        }
+        .btn-wrap{
+            margin-bottom: 10px;
+        }
+        .wrap{
+            border: 1px solid black;
+            max-width: 600px;
+        }
+        .txt{
+            width: 10%;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            let txt = $(".txt");   // let txt = document.querySelector(".txt") 이와 같은 내용
+            let count = 1;
+            $(".btn-wrap button").on("click",function(){
+                let ts = $(this);
+                if(ts.hasClass("back-button")) {
+                    // 선택되어진 Tag가 "back-button"이란 클래스를 포함하고 있으면
+                    count--;
+                    if(count < 1){
+                        count = 1;
+                        return;
+                    }
+                    txt.animate({marginLeft : "-=10%"}, 2000);
+                }
+                else{
+                    count++;
+                    if(count > 10){
+                        count = 10;
+                        return;
+                    }
+                    txt.animate({marginLeft : "+=10%"}, 2000);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p class="btn-wrap">
+        <button class="back-button">BACK</button>
+        <button class="go-button">GO</button>
+    </p>
+
+    <div class="wrap">
+        <p class="txt">내용1</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document)
+        .on('click','#btnNew',function(){
+            // let name = $('#name').val();
+            // let mobile = $('#mobile').val();
+            // let region = $('#region').val();
+            // let str = '<tr><th>'+name+'</th><th>'+mobile+'</th><th>'+region+'</th></tr>'
+            // $('#tblData').prepend(str);
+            $('#tblData').before("<input type=button value='OK'>");
+        })
+        .on('click','#btnNew1',function(){
+            // let name = $('#name').val();
+            // let mobile = $('#mobile').val();
+            // let region = $('#region').val();
+            // let str = '<tr><th>'+name+'</th><th>'+mobile+'</th><th>'+region+'</th></tr>'
+            // $('#tblData').append(str);
+            $('#tblData').after("<input type=button value='Not OK'>");
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <table border="1" id="tblData">
+                    <thead>
+                        <tr><th>이름</th><th>모바일</th><th>지역</th></tr>
+                    </thead>
+                </table><br><br>
+            </td>
+            <td>
+                <table>
+                    <tr><td>이름:<input type="text" id="name"></td></tr>
+                    <tr><td>모바일:<input type="text" id="mobile"></td></tr>
+                    <tr><td>지역:<input type="text" id="region"></td></tr>
+                    <tr><td><button id="btnNew">앞에 추가</button><button id="btnNew1">뒤에 추가</button></td></tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        
+
+        $(document)
+        .on('click','#selMenu',function(){
+            let str = $('#selMenu option:selected').text();
+            let ar = str.split(', ')
+            
+            $('#menu').val(ar[0]);
+            $('#price').val(ar[1]);
+        })
+        .on('click','#plus',function(){
+            let str = $('#selMenu option:selected').text();
+            let ar = str.split(', ');
+            let qty = $('#inp').val();
+            qty = parseInt(qty)+1;
+            $('#inp').val(qty);
+            let a = ar[1]*qty;
+            $('#price').val(a);
+        })
+        .on('click','#minus',function(){
+            let str = $('#selMenu option:selected').text();
+            let ar = str.split(', ');
+            let qty = $('#inp').val();
+            qty = parseInt(qty)-1;
+            $('#inp').val(qty);
+            let a = ar[1]*qty;
+            $('#price').val(a);
+            if(parseInt(qty) == 0){
+                $('#inp').val(1); }
+        })
+        .on('click', '#add', function(){
+            let str = $('#selMenu option:selected').text();
+            let ar = str.split(', ');
+            let qty = $('#inp').val();
+            let a = ar[1]*qty;
+            
+            $('#selOrder').append("<option>"+ar[0]+" "+"x"+" "+qty+" "+ar[1]*qty+"."+"</option>");
+            let sum =  parseInt($('#sum').val()) + parseInt(a);
+            $('#sum').val(sum);
+            $('#inp').val(1);
+            $('#menu').val("");
+            $('#price').val("");
+        })      
+        .on('click', '#delete', function(){
+            $('#menu').val("");
+            $('#price').val("");
+        })
+        .on('click','#order',function(){
+            let str = $('#selOrder option').text();
+            let ar = str.split('.');
+            let qty = $('#inp').val();
+            let mobile = $('#mobile').val();
+            let sum = $('#sum').val();
+            $('#sales').val(0);
+            
+            for(i=0; i<ar.length-1; i++){
+            $('#selSales').append("<option>"+mobile+" "+ar[i]+"</option>");
+            }
+            $('#selSales option').each(function(){
+                let str2 = $(this).text();
+                let ar2 = str2.split(' ');
+                let a = parseInt($('#sales').val()) + parseInt(ar2[4]);
+                $('#sales').val(a);
+            })
+        })
+        .on('click','#orderDel',function(){
+            let str = $('#selOrder option:selected').text();
+            let ar = str.split(' ');
+            $('#selOrder option:selected').remove();
+            let a = $('#sum').val() - parseInt(ar[3]);
+            $('#sum').val(a);
+        })
+    </script>
+    <style>
+        select {width: 400px; height: 450px; margin-top: 5px;}
+        tr {display: flex;}
+        td {flex: 1;}
+        div{text-align: center; margin-top: 10px;}
+        .count > button.minus {right: 0; bottom: 0;}
+        .count> button.plus {right: 0;}
+        .sel > label {font-size: 20px;}
+        option {font-size: 20px; text-align: justify;}
+    </style>
+
+</head>
+<body>
+   <table>
+        <tr>
+            <td>
+                <label>메뉴목록</label>
+                <select class="sel" id="selMenu" multiple>
+                    <option>Americano, 2500</option>
+                    <option>Mocca, 3200</option>
+                    <option>Espresso, 2300</option>
+                    <option>Cappuccino, 3500</option>
+                    <option>Latte, 3000</option>
+                    <option>Greentea, 2700</option>
+
+                </select>
+                <div>
+                <label>메뉴명</label>
+                <input id="menu" type="text" readonly>
+                </div>
+                <div>
+                    <div class="count">
+                    <label id="qty">수량</label>
+                    <input type="text" id="inp" value="1"/>
+                    <label>잔</label>
+                    <button type="button" id="plus">△</button>
+                    <button type="button" id="minus">▽</button>
+                </div>
+                </div>
+                <div>
+                <label>가격</label>
+                <input id="price" type="text" readonly>
+                <label>원</label>
+                </div>
+                <div>
+                <button id="add">추가</button>
+                <button id="delete">지우기</button>
+                </div>
+            </td>
+            <td>
+                <label>주문내역</label>
+                <select id="selOrder" multiple>
+                </select>
+                <div>
+                <label>총액</label>
+                <input id="sum" type="text" value="0" readonly>
+                <label>원</label>
+            </div>
+            <div>
+                <label>모바일번호</label>
+                <input id="mobile" type="text">
+            </div>
+            <div style="margin-top: 40px;">
+                <button id="order">주문완료</button>
+                <button id="orderDel">주문삭제</button>
+                </div>
+            </td>
+            <td>
+                <label>매출내역</label>
+                <select id="selSales" multiple>
+                </select>
+                <div>
+                <label>매출총액</label>
+                <input id="sales" type="text" value="0" readonly>
+                <label>원</label>
+                </div>
+            </td>
+        </tr>
+   </table>
+</body>
+</html>

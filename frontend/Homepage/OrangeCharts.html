@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrangeCharts</title>
+    <script>
+      window.addEventListener("load", function(){
+        let today1 = document.getElementById('today1');
+        let today2 = document.getElementById('today2');
+        let button1 = document.getElementById('button1');
+        let button2 = document.getElementById('button2');
+        let showmore = document.getElementById('showmore');
+        let showmorecharts = document.getElementById('showmorecharts');
+        let button11 = document.getElementById('button11');
+        let button22 = document.getElementById('button22');
+
+        button1.onclick = function(){
+          if(today1.style.display == "none") {
+            today1.style.display = "block";
+            today2.style.display = "none";
+          }
+        }
+        button2.onclick = function(){
+          if(today2.style.display == "none") {
+            today2.style.display = "block";
+            today1.style.display = "none"
+          }
+        }
+        showmore.onclick = function(){
+          if(showmorecharts.style.display == "none"){
+            showmorecharts.style.display = "block";
+          }
+        }
+      });
+    </script>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0.5px 0.5px 10px;
+  z-index: 1;
+}
+body{
+  background-color: rgb(248, 229, 195);
+}
+.today{
+  margin-top: 100px;
+  margin-left: 0;
+  margin-right: 0;
+  background: #f27403;
+  position: absolute;
+  height: 70%;
+  width: 100%;
+}
+.main{
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+.today{
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+
+#today1{
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+#today2{
+  animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -o-animation: fadein 1s;
+}
+@-webkit-keyframes fadein { 
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+a{
+  text-decoration-line: none;
+  color: black;
+}
+a:hover{
+  text-decoration-line: underline;
+}
+#showmore:hover{
+  width: 132px;
+  height: 43px;
+}
+@keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 100%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+    }
+    .charts {
+        animation: fadeInUp 5s;
+    }
+    #showmorecharts{
+        animation: fadeInUp 2s;
+    }
+    #li4{
+      text-decoration-line: none;
+      color: gray;
+    }
+    #li4:hover{
+      text-decoration-line: underline;
+    }
+    </style>
+</head>
+<body>
+    <header>
+      <div style="text-align: center;">
+        <a href="./OrangeCharts.html"><img src="./imgs/chatsLogo.jpg" style="width:50px; height:50px; border-radius: 30%; margin-top: 4px;"></a>
+      </div>
+    </header>
+    <div class="main" style="position: relative; text-align: center; margin-top: 200px; position: relative;" max-width: auto;>
+      <img src="./imgs/concert.jpg">
+      <h1 style="position: absolute; top:20%; left:50%; transform: translate(-50%, -50%); font-weight:bold; font-size: 80px; color: white;" class="concertText">OrangeCharts로 <br> 음악을 즐겨요</h1>
+    </div>
+    <div class="today">
+      <div style="position: absolute; padding-top:80px; padding-left: 50px; font-weight:bold; font-size: 50px; color:white;">오늘의 음악 추천</div>
+      <div id="today1" style="display: block; margin-top: 100px;">
+        <img src="./imgs/circles.jpg" style="position: absolute; width:350px; height:350px; border-radius: 20%; margin-top: 100px; margin-left:50px; margin-bottom:100px; width: 30%; box-shadow: 5px 5px 10px;">
+        <p style="margin-top: 200px; position: absolute; width: 600px; padding-left:700px; font-weight:bold; font-size: 25px; color:white; width: 30%;">"쌀쌀한 가을에 듣기 좋은 노래"</p>
+      </div>
+      <div id="today2" style="display: none; margin-top: 100px;">
+        <img src="./imgs/dieforyou.jpg" style="position: absolute; width:350px; height:350px; border-radius: 20%; margin-top: 100px; margin-left:50px; margin-bottom:100px; width: 30%; box-shadow: 5px 5px 10px;">
+        <p style="margin-top: 200px; position: absolute; width: 600px; padding-left:700px; font-weight:bold; font-size: 25px; color:white; width: 30%;">"꽤 애절한 가사와 위켄드의 감미로운 보컬이 돋보이는 노래"</p>
+      </div>
+      <ul class="dot">
+        <li style="position: absolute; padding-left: 860px; padding-top: 450px;">
+          <div id="button2"><img id="button22" src="./imgs/grayButton.png" onmouseover="this.src='./imgs/whiteButton.png'" onmouseout="this.src='./imgs/grayButton.png'"><div>
+        </li>
+        <li style="position: absolute; padding-left: 830px; padding-top: 450px;">
+          <div id="button1"><img id="button11" src="./imgs/grayButton.png" onmouseover="this.src='./imgs/whiteButton.png'" onmouseout="this.src='./imgs/grayButton.png'"><div>
+        </li>
+      </ul>
+    </div>
+      <div id="test" class="charts" style="padding-top: 800px;">
+        <h2 style="position: absolute; padding-left: 40px; font-weight:bold; font-size: 40px; color: black;">Weekly Top Songs Global</h2>
+        <h3 style="padding-top: 80px; padding-left: 40px; position: absolute; font-size: 20px; color:gray;">2022년 11월 14일 기준</h3>
+        <ol id="charts" style="padding-top: 150px;">
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">1</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp-&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 100px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=b1kbLwvqugk">Anti-Hero</a></li>
+                <li style="display:inline-flex; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">2</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 70px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=I4DjHHVHWAE">Rich Flex</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/3.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">3</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓1&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 75px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=Uq9gPaIzbe8">Unholy (feat. Kim Petras)</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Sam Smith.html">Sam Smith</a>, <a id="li4" href="./singer/Kim Petras.html">Kim Petras</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">4</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 70px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=LfPYX03_4rA">Major Distribution</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">5</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 70px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=8LpAtRIakkk">Pussy & Millions (feat. Travis Scott)</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><div style="display: inline;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></div></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">6</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 70px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=PNFZHl1H8zY">On BS</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/7.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">7</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓2&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 75px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=90RLzVUuXe4">I'm Good (Blue)</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/David Guetta.html">David Guetta</a>, <a id="li4" href="./singer/Bebe Rexha.html">Bebe Rexha</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/8.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">8</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓1&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 75px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=TiM_TFpT_DE">La Bachata</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Manuel Turizo.html">Manuel Turizo</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/9.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">9</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓1&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 75px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=H5v3kku4y6Q">As It Was</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Harry Styles.html">Harry Styles</a></li>
+              </div>
+              <br>
+              <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                <img  src="./imgs/10.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">10</li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp-&nbsp&nbsp</div></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 75px; font-size:35px; font-weight:bold; color: black;"><a href="https://www.youtube.com/watch?v=A_g3lMcWVy0">Quevedo: Bzrp Music Sessions, Vol. 52</a></li>
+                <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Bizarrap.html">Bizarrap</a></li>
+              </div>
+              <br>
+              <div id="showmorecharts" style="display: none;">
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">11</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Circo Loco</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">12</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓8&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 65px; font-size:35px; font-weight:bold; color: black;">Midnight Rain</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">13</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓10&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Lavender Haze</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">14</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Spin Bout U</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">15</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Privileged Rappers</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">16</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">BackOutsideBoyz</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/17.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">17</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓1&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 65px; font-size:35px; font-weight:bold; color: black;">Under The Influence</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Chris Brown.html">Chris Brown</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">18</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓12&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Snow On The Beach (feat. Lana Del Rey)</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/2.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">19</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbspnew&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Broke Boys</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/Drake.html">Drake</a>, <a id="li4" href="./singer/21 Savage.html">21 Savage</a></li>
+                </div>
+                <br>
+                <div style="margin-left: 80px; margin-right: 80px; background-color: white;">
+                  <img  src="./imgs/1.jpg" style="margin-top: 20px; margin-bottom: 20px; margin-left: 20px; vertical-align: middle; width: 100px; height: 100px;">
+                  <li style="display: inline; vertical-align: middle; padding-left: 40px; font-size:30px; font-weight:bold; color: black;">20</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px;"><div style="display: inline; width:50px; font-weight: bold; height: 20px; border-radius: 30%; background-color: rgb(201, 201, 201);">&nbsp&nbsp↓11&nbsp&nbsp</div></li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 60px; font-size:35px; font-weight:bold; color: black;">Maroon</li>
+                  <li style="display: inline; vertical-align: middle; padding-left: 20px; color: gray;"><a id="li4" href="./singer/TaylorSwift.html">Taylor Swift</a></li>
+                </div>
+              </div>
+              <br>
+        </ol>
+      </div>
+      <center>
+       <button 
+       type="button"
+       id="showmore"
+       style="margin-bottom: 200px; background-color:#f27403; color: white; font-size: 20px; font-weight: bold; border-radius: 0.5em; border: 0; padding: 5px 20px;">
+        &nbsp&nbsp더보기 ↓
+      </button>
+      </center>
+    </body>
+</html>

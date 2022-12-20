@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        })
+        .on('click','#btnGo',function(){
+            $('#dvSample').css({width:'200px',height:'200px', backgroundColor: 'red',color:'yellow'});
+            $('#dvSample').html('<input type=button value=btnRun>');
+            return false;
+        })
+   </script>
+    
+</head>
+<body>
+    <!-- <input type="text" id="name" name="firstText" class="home"><br> -->
+    <input type="button" value="do something" id="btnGo"><br>
+    <!-- <input type="text" id="name1" class="house"><br> -->
+    <div id="dvSample">
+        </div>
+</body>
+</html>
