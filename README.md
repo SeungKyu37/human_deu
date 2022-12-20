@@ -10,23 +10,28 @@
 ### 훈련 내용
 
 + **JAVA**
-    + 2022.10.04 ~ 
+    + 2022.10.04 ~ 2022.11.04
     + 사용툴 : Eclipse
-    + 
+    + 객체에 대한 이해
+    + 자바 알고리즘 학습
 
 + **FrontEnd**
-    + 2022.
+    + 2022.11.05 ~ 2022.11.16
     + 사용툴 : vs code
     + HTML, CSS, JAVASCRIPT, JQUERY, AJAX 학습
     + 홈페이지 제작
 
 + **SQL**
-    + 2022.
+    + 2022.11.17 ~ 2022.11.25
     + 사용툴 : Oracle SQL Developer
     + 대용량의 Dataset을 활용하여 Data Handling 실습
     + 테이블 생성 및 select, join 등을 활용한 DB관리
 
 + **Spring**
-    + 2022.
+    + 2022.11.28 ~ 2022.12.16
     + 사용툴 : Eclipse
     + 
+
++ **R**
+    + 2022.12.17 ~ 
+    + 사용툴 : RStudio
