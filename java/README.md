@@ -98,7 +98,7 @@
 
 **19일차**
 + List 컬렉션
-+ ArrayList
++ ArrayList, LinkedList
 + Set, Map 컬렉션
 + TreeSet, TreeMap
 + LIFO/FIFO
