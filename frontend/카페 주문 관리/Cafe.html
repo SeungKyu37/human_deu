@@ -10,6 +10,7 @@
         
 
         $(document)
+        // 메뉴목록에 메뉴 선택 시 메뉴명과 가격 표시
         .on('click','#selMenu',function(){
             let str = $('#selMenu option:selected').text();
             let ar = str.split(', ')
@@ -17,6 +18,8 @@
             $('#menu').val(ar[0]);
             $('#price').val(ar[1]);
         })
+        // 수량 옆 플러스 버튼 클릭 시
+        // 수량 +1, 그만큼 가격 +
         .on('click','#plus',function(){
             let str = $('#selMenu option:selected').text();
             let ar = str.split(', ');
@@ -26,6 +29,9 @@
             let a = ar[1]*qty;
             $('#price').val(a);
         })
+        // 수량 옆 마이너스 버튼 클릭 시
+        // 수량 -1, 그만큼 가격 -
+        // 수량은 1 밑으로 떨어지지 않는다.
         .on('click','#minus',function(){
             let str = $('#selMenu option:selected').text();
             let ar = str.split(', ');
@@ -37,6 +43,9 @@
             if(parseInt(qty) == 0){
                 $('#inp').val(1); }
         })
+        // 메뉴목록 추가 버튼 클릭 시 
+        // 메뉴목록에 있는 메뉴의 수량과 가격만큼
+        // 주문내역으로 값이 옮겨간다.
         .on('click', '#add', function(){
             let str = $('#selMenu option:selected').text();
             let ar = str.split(', ');
@@ -49,11 +58,16 @@
             $('#inp').val(1);
             $('#menu').val("");
             $('#price').val("");
-        })      
+        })   
+        // 메뉴목록 지우기 버튼 클릭 시 
+        // 메뉴명과 가격 초기화   
         .on('click', '#delete', function(){
             $('#menu').val("");
             $('#price').val("");
         })
+        // 주문내역 주문완료 버튼 클릭시
+        // 매출내역에 모바일번호, 주문내역을 보여준다.
+        // 매출총액도 보여준다.
         .on('click','#order',function(){
             let str = $('#selOrder option').text();
             let ar = str.split('.');
@@ -72,6 +86,9 @@
                 $('#sales').val(a);
             })
         })
+        // 주문내역 주문삭제 버튼 클릭 시
+        // 주문내역의 한 옵션이 삭제되고
+        // 총액이 그만큼 줄어든다.
         .on('click','#orderDel',function(){
             let str = $('#selOrder option:selected').text();
             let ar = str.split(' ');
