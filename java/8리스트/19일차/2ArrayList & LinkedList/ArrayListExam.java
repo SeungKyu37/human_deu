@@ -40,7 +40,7 @@ public class ArrayListExam {
 		boolean a1 = list1.add("휴먼");
 		System.out.println(list1);
 		System.out.println("a1 : " +a1);
-		list1.add(1, "영등포");	//add에 인덱스를 추가할 셩우 인덱스 위치에 내용을 추가하고, 뒤의 내용을 한칸씩 미룬다.
+		list1.add(1, "영등포");	//add에 인덱스를 추가할 경우 인덱스 위치에 내용을 추가하고, 뒤의 내용을 한칸씩 미룬다.
 		System.out.println(list1);
 		String isSet = list1.set(1, "천안");
 		// set은 특정위치에 데이터를 변경함. 되돌려준 값은 변경이전의 값을 되돌려줌.

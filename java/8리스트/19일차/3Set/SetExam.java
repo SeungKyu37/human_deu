@@ -56,9 +56,5 @@ public class SetExam {
 
 		set1.clear();
 		System.out.println(set1);
-
-		
-		
-	
 	}
 }

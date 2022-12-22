@@ -48,7 +48,5 @@ public class ListExam {
 		boolean isRemove1 = list1.remove("천안");
 		System.out.println("isRemove1 : " + isRemove1);
 		System.out.println(list1);
-
-		
 		}
 }
