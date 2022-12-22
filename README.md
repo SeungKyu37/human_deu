@@ -11,14 +11,14 @@
 
 + **JAVA - JAVA SE**
     + 2022.10.04 ~ 2022.11.04
-    + 사용툴 : ```Eclipse```
+    + 사용툴 : `Eclipse`
     + version : 17.0.4.1
     + 객체에 대한 이해
     + 자바 알고리즘 학습
 
 + **FrontEnd**
     + 2022.11.05 ~ 2022.11.16
-    + 사용툴 : ``vs code``
+    + 사용툴 : `vs code`
     + HTML, CSS, JAVASCRIPT, JQUERY, AJAX 학습
     + 홈페이지 제작
 
