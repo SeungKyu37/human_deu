@@ -17,18 +17,21 @@
         let button22 = document.getElementById('button22');
 
         button1.onclick = function(){
+          // 오늘의 음악추천 두번째 내용은 사라지고 첫번째 내용을 보여주는 버튼
           if(today1.style.display == "none") {
             today1.style.display = "block";
             today2.style.display = "none";
           }
         }
         button2.onclick = function(){
+          // 오늘의 음악추천 첫번째 내용은 사라지고 두번째 내용을 보여주는 버튼
           if(today2.style.display == "none") {
             today2.style.display = "block";
             today1.style.display = "none"
           }
         }
         showmore.onclick = function(){
+          // 더보기 버튼 클릭시 10개의 음악 차트를 더 보여주기
           if(showmorecharts.style.display == "none"){
             showmorecharts.style.display = "block";
           }
@@ -41,6 +44,7 @@
         padding: 0;
       }
 header {
+  /* 스크롤을 내려도 상단에 고정시키기 */
   position: fixed;
   top: 0;
   left: 0;
@@ -86,6 +90,7 @@ body{
   -webkit-animation: fadein 1s;
   -o-animation: fadein 1s;
 }
+/* fade-in 애니메이션 */
 @-webkit-keyframes fadein { 
     from {
         opacity: 0;
@@ -98,13 +103,17 @@ a{
   text-decoration-line: none;
   color: black;
 }
+/* 마우스를 위에 올렸을 때 밑줄이 생기는 기능 */
 a:hover{
   text-decoration-line: underline;
 }
+/* 더보기를 마우스 위에 올렸을 때 더보기 버튼이 조금 더 커지는 기능 */
 #showmore:hover{
   width: 132px;
   height: 43px;
 }
+
+/* 음악 차트가 아래에서 위로 올라오는 애니메이션 */
 @keyframes fadeInUp {
         0% {
             opacity: 0;

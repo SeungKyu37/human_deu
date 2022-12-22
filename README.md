@@ -42,6 +42,7 @@
     + 사용툴 : `RStudio`
     + R 기초 문법, 데이터 가공, 데이터 시각화, 텍스트 마이닝, 지도 시각화
     + 주요 패키지 : dplyr, ggplot2, KoNLP, ggmap, googleVis
+    + 참고 서적 : 처음 시작하는 R 데이터 분석 (강전희, 엄동란)
 
 
 + **Python**
