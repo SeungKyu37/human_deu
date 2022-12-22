@@ -40,6 +40,8 @@
     + 2022.12.17 ~ 
     + version : 4.1.3
     + 사용툴 : `RStudio`
+    + R 기초 문법, 데이터 가공, 데이터 시각화, 텍스트 마이닝, 지도 시각화
+    + 주요 패키지 : dplyr, ggplot2, KoNLP, ggmap, googleVis
 
 
 + **Python**
