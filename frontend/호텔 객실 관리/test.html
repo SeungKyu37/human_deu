@@ -17,8 +17,9 @@
             })
         </script>
         <script>
-             // 전역변수
+            // 전역변수
             arRoom=[];
+            arRoomBooked=[];
             $(document)
             // 객실종류관리 탭에서 
             // 등록버튼 클릭 시
@@ -86,7 +87,7 @@
                 for(i=0; i<arRoom.length; i++){
                     roominfo=arRoom[i];
                     if(roominfo['num']==$('#roomNum2').val()){
-                        arRoom[i]['type']=roomName;
+                        arRoom[i]['type']=$('#roomName2 option:selected').text();
                         arRoom[i]['name']=$('#roomName3').val();
                         arRoom[i]['qty']=parseInt($('#qty').val());
                         arRoom[i]['price']=parseInt($('#price').val());
@@ -237,11 +238,38 @@
                 $('#allPrice').val(ar[4]*dateDiff);
             })
             // 세부내역에 예약 등록 버튼 클릭 시
-            // 예약완료목록 내 예약객식목록에
-            // 숙박 시작 날짜 ~ 숙박 종료 날짜, 객실명, 숙박예정인원, 총비용, 에약자명, 모바일번호, 객실종류명 표시
-            // 예약가능 목록 내 객실목록에
-            // 같은 날짜 객실 표시X
+            
             .on('click','#add3',function(){
+                for(i=0; i<arRoomBooked.length; i++){
+                    roominfo1=arRoomBooked[i];
+                    if(roominfo1['num']==$('#roomNum3').val()){
+                        arRoomBooked[i]['type']=$('#roomName4').val();
+                        arRoomBooked[i]['name']=$('#roomName5').val();
+                        arRoomBooked[i]['qty']=parseInt($('#pNum2').val());
+                        arRoomBooked[i]['dateStart']=$('#dateStart2').val();
+                        arRoomBooked[i]['dateEnd']=$('#dateEnd2').val();
+                        arRoomBooked[i]['price']=parseInt($('#allprice').val());
+                        arRoomBooked[i]['pName']=$('#pName').val();
+                        arRoomBooked[i]['mobile']=$('#mobile').val();
+                        flag = true;
+                        break;
+                    }
+                }
+                if(flag==false){
+                        roominfo1={};
+                        arRoomBooked[i]['num']=$('#roomNum3').val();
+                        arRoomBooked[i]['type']=$('#roomName4').val();
+                        arRoomBooked[i]['name']=$('#roomName5').val();
+                        arRoomBooked[i]['qty']=parseInt($('#pNum2').val());
+                        arRoomBooked[i]['dateStart']=$('#dateStart2').val();
+                        arRoomBooked[i]['dateEnd']=$('#dateEnd2').val();
+                        arRoomBooked[i]['price']=parseInt($('#allprice').val());
+                        arRoomBooked[i]['pName']=$('#pName').val();
+                        arRoomBooked[i]['mobile']=$('#mobile').val();
+                        arRoom.push(roominfo1);
+                }
+                console.log(roominfo1);
+
                 let roomNum = $('#roomNum3').val();
                 let roomtype = $('#roomName4').val();
                 let roomName = $('#roomName5').val();
@@ -253,18 +281,7 @@
                 let mobile = $('#mobile').val();
                 $('#room4').append("<option value="+roomNum+">"+dateStart+" "+"~"+" "+dateEnd+" "+roomName+" x"+" "+qty+" "+price+" "+pName+" "+mobile+" "+roomtype+"</option>");
                 $('#clear').trigger('click');
-                let str = $('#room4').text();
-                let ar = str.split(' ');
-                let dateStart1 = $('#dateStart1').val();
-                let dateEnd1 = $('#dateEnd1').val();
-                let dateStart2 = ar[0];
-                let dateEnd2 = ar[2];
-                if(dateStart1 == dateStart2 && dateEnd1 == dateEnd2){
-                    $('#room3 option:selected').remove();
-                }
             })
-            // 세부내역에 비우기 버튼 클릭 시
-            // 세부내역 리셋
             .on('click','#clear',function(){
                 $('#roomNum3').val("");
                 $('#roomName4').val("");
@@ -276,8 +293,6 @@
                 $('#pName').val("");
                 $('#mobile').val("");
             })
-            // 예약객실목록 중 한 객실을 선택하면
-            // 세부내역에 객실번호, 객실종류명, 객실명, 숙박예정인원, 숙박기간, 총비용, 예약자명, 모바일번호 표시
             .on('click','#room4',function(){
                 let str = $('#room4 option:selected').text();
                 let ar = str.split(' ');
@@ -292,12 +307,6 @@
                 $('#pName').val(ar[7]);
                 $('#mobile').val(ar[8]);
             })
-            // 세부내역에 예약취소 버튼 클릭 시
-            // 선택된 예약객실목록의 객실 한개 삭제
-            // 또한 세부내역 리셋
-            // 예약가능 목록 내 객실목록에
-            // 같은 날짜 객실 찾기 버튼 클릭 시
-            // 객실 검색 가능
             .on('click','#del3',function(){
                 $('#room4 option:selected').remove();
                 $('#clear').trigger('click');
