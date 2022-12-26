@@ -1,3 +1,4 @@
+-- 테이블 생성
 create table student(
 name varchar2(20) not null,
 gender varchar2(1) not null,
@@ -16,7 +17,7 @@ desc student;
 insert into student values ('John','M','WestLake',6,null,null,null,null);
 insert into student values ('Jane','F','RiverWest',5,null,null,null,null);
 insert into student(name,gender,school_name,grade_num) values ('Jacob','M','RiverEast',6);
-insert into student values ('김승규','M','동양중',3,null,null,null,null);
+insert into student values ('sissoko','M','Manchester',3,null,null,null,null);
 insert into student values ('Greg','M','RiverNorth',2,null,null,null,null);
 insert into student values ('James','M','SouthLake',3,null,null,null,null);
 insert into student values ('Suzi','F','RiverWest',1,null,null,null,null);

@@ -48,5 +48,5 @@
 
 + **Python**
     + 2022.12.
-    + version : 
-    + 
+    + version : 3.11.1
+    + 사용툴 : `vs code`
