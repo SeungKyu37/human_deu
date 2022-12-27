@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 # 문자열 포맷팅 연습
 
-def main():
-    print(1+1)
-
 if __name__ == "__main__":
     # 숫자 바로 대입
     print("I eat %d apples." %3)
