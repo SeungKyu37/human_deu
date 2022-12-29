@@ -25,3 +25,8 @@
 + 라이브러리
 + numpy
 + pandas
+
+**4일차**
++ 시각화 라이브러리
++ matplotlib, seaborn (정적 시각화) 
++ plotly (동적 시각화)
