@@ -1,132 +1,136 @@
--- ¿¬½À¹®Á¦ 1. SELECT Á¶°Ç 
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºíÀÇ ¸ðµç ÇÊµå¸¦ °Ë»öÇÑ´Ù. 
+-- ì—°ìŠµë¬¸ì œ 1. SELECT ì¡°ê±´ 
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì˜ ëª¨ë“  í•„ë“œë¥¼ ê²€ìƒ‰í•œë‹¤. 
 select * from tb_point;
 
--- ¿¬½À¹®Á¦ 2. SELECT Á¶°Ç 
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ °í°´ÄÚµå, Æ÷ÀÎÆ®³»¿ë, Æ÷ÀÎÆ®¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 2. SELECT ì¡°ê±´ 
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œ, í¬ì¸íŠ¸ë‚´ìš©, í¬ì¸íŠ¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, point_memo, point from tb_point;?
 
--- ¿¬½À¹®Á¦ 3. SELECT Á¶°Ç 
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ °í°´ÄÚµå, Æ÷ÀÎÆ®³»¿ë, Æ÷ÀÎÆ® ÇÊµå Á¦¸ñÀ» ÇÑ±Û·Î Ãâ·ÂÇÑ´Ù. 
-select customer_cd °í°´ÄÚµå, point_memo "Æ÷ÀÎÆ® ³»¿ë", point Æ÷ÀÎÆ® from tb_point;
+-- ì—°ìŠµë¬¸ì œ 3. SELECT ì¡°ê±´ 
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œ, í¬ì¸íŠ¸ë‚´ìš©, í¬ì¸íŠ¸ í•„ë“œ ì œëª©ì„ í•œê¸€ë¡œ ì¶œë ¥í•œë‹¤. 
+select customer_cd ê³ ê°ì½”ë“œ, point_memo "í¬ì¸íŠ¸ ë‚´ìš©", point í¬ì¸íŠ¸ from tb_point;
 
--- ¿¬½À¹®Á¦ 4. WHERE Á¶°Ç
--- °í°´°ü¸® Å×ÀÌºí¿¡¼­ ´©ÀûÆ÷ÀÎÆ®°¡ 10,000 ¹Ì¸¸ÀÎ µ¥ÀÌÅÍÀÇ °í°´ÄÚµå, °í°´¸í, ÀÌ¸ÞÀÏ, ´©ÀûÆ÷ÀÎÆ® ÇÊµå¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 4. WHERE ì¡°ê±´
+-- ê³ ê°ê´€ë¦¬ í…Œì´ë¸”ì—ì„œ ëˆ„ì í¬ì¸íŠ¸ê°€ 10,000 ë¯¸ë§Œì¸ ë°ì´í„°ì˜ ê³ ê°ì½”ë“œ, ê³ ê°ëª…, ì´ë©”ì¼, ëˆ„ì í¬ì¸íŠ¸ í•„ë“œë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, customer_nm, email, total_point from tb_customer where total_point < 10000;
 
--- ¿¬½À¹®Á¦ 5. WHERE-AND Á¶°Ç
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ °í°´ÄÚµå°¡ ¡®2017053¡¯ÀÌ¸é¼­ ÀÏ·Ã¹øÈ£°¡ 2ÀÎ µ¥ÀÌÅÍÀÇ °í°´ÄÚµå, ÀÏ·Ã¹øÈ£, Æ÷ÀÎÆ® ÇÊµå¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 5. WHERE-AND ì¡°ê±´
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œê°€ â€˜2017053â€™ì´ë©´ì„œ ì¼ë ¨ë²ˆí˜¸ê°€ 2ì¸ ë°ì´í„°ì˜ ê³ ê°ì½”ë“œ, ì¼ë ¨ë²ˆí˜¸, í¬ì¸íŠ¸ í•„ë“œë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, seq_no, point from tb_point where customer_cd = '2017053' and seq_no = 2;
 
--- ¿¬½À¹®Á¦ 6. WHERE-OR Á¶°Ç
--- ¼ºÀû Å×ÀÌºí¿¡¼­ ¹ÝÄÚµå°¡ ¡®A¡¯ ¶Ç´Â ¡®B¡¯ÀÌ°Å³ª ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö°¡ ¸ðµÎ 80Á¡ ÀÌ»óÀÎ ÇÐ»ý ÇÊµå¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 6. WHERE-OR ì¡°ê±´
+-- ì„±ì  í…Œì´ë¸”ì—ì„œ ë°˜ì½”ë“œê°€ â€˜Aâ€™ ë˜ëŠ” â€˜Bâ€™ì´ê±°ë‚˜ êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ê°€ ëª¨ë‘ 80ì  ì´ìƒì¸ í•™ìƒ í•„ë“œë¥¼ ê²€ìƒ‰í•œë‹¤.
 select * from tb_grade where class_cd = 'A' or class_Cd = 'B' or kor >=80 and eng >= 80 and mat >= 80; 
 ?
--- ¿¬½À¹®Á¦ 7. WHERE BETWEEN Á¶°Ç
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ µî·ÏÀÏ½Ã°¡ 2018³â ³»¿¡ ÀÖ°í, Æ÷ÀÎÆ®°¡ 10,000¿¡¼­ 50,000 Æ÷ÀÎÆ® ¹üÀ§ÀÇ µ¥ÀÌÅÍ¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 7. WHERE BETWEEN ì¡°ê±´
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ë“±ë¡ì¼ì‹œê°€ 2018ë…„ ë‚´ì— ìžˆê³ , í¬ì¸íŠ¸ê°€ 10,000ì—ì„œ 50,000 í¬ì¸íŠ¸ ë²”ìœ„ì˜ ë°ì´í„°ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select * from tb_point where substr(reg_dttm, 1,4) <= 2018 and point between 10000 and 50000;
 
--- ¿¬½À¹®Á¦ 8. ºñ±³¿¬»êÀÚ
--- °í°´ Å×ÀÌºí¿¡¼­ ´©ÀûÆ÷ÀÎÆ®°¡ 20,000 ÀÌ»óÀÎ 1980³â´ë ³²¼º °í°´ÀÇ °í°´ÄÚµå, °í°´¸í, ¼ºº°, »ý³â¿ùÀÏ, ´©ÀûÆ÷ÀÎÆ®¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 8. ë¹„êµì—°ì‚°ìž
+-- ê³ ê° í…Œì´ë¸”ì—ì„œ ëˆ„ì í¬ì¸íŠ¸ê°€ 20,000 ì´ìƒì¸ 1980ë…„ëŒ€ ë‚¨ì„± ê³ ê°ì˜ ê³ ê°ì½”ë“œ, ê³ ê°ëª…, ì„±ë³„, ìƒë…„ì›”ì¼, ëˆ„ì í¬ì¸íŠ¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, customer_nm, mw_flg, birth_day, total_point 
 from tb_customer 
 where substr(birth_day, 1, 3) = '198' 
 and total_point >= 20000;
 
--- ¿¬½À¹®Á¦ 9. LIKE
--- °í°´ Å×ÀÌºí¿¡¼­ ³²¼ºÀÌ¸é¼­ »ý³â¿ùÀÏ Áß ¿ùÀÌ 5, 6, 7¿ùÀÎ °í°´ÀÇ °í°´ÄÚµå, °í°´¸í, ¼ºº°, »ý³â¿ùÀÏ, ´©ÀûÆ÷ÀÎÆ®¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 9. LIKE
+-- ê³ ê° í…Œì´ë¸”ì—ì„œ ë‚¨ì„±ì´ë©´ì„œ ìƒë…„ì›”ì¼ ì¤‘ ì›”ì´ 5, 6, 7ì›”ì¸ ê³ ê°ì˜ ê³ ê°ì½”ë“œ, ê³ ê°ëª…, ì„±ë³„, ìƒë…„ì›”ì¼, ëˆ„ì í¬ì¸íŠ¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, customer_nm, mw_flg, birth_day, total_point 
 from tb_customer where mw_flg = 'M' 
 and (birth_day like '____05%' or birth_day like '____06%' or birth_day like '____07%');
 
--- ¿¬½À¹®Á¦ 10. LIKE
--- °í°´ Å×ÀÌºí¿¡¼­ °í°´ÄÚµå°¡ ¡®2017¡¯·Î ½ÃÀÛÇÏ¸é¼­ ³²¼ºÀÎ °í°´ ¶Ç´Â °í°´ÄÚµå°¡ ¡®2019¡¯·Î ½ÃÀÛÇÏ¸é¼­ ¿©¼ºÀÎ °í°´À» ±¸ÇÏ°í, ±× Áß ´©ÀûÆ÷ÀÎÆ®°¡ 30000 ÀÌÇÏÀÎ µ¥ÀÌÅÍ¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 10. LIKE
+-- ê³ ê° í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œê°€ â€˜2017â€™ë¡œ ì‹œìž‘í•˜ë©´ì„œ ë‚¨ì„±ì¸ ê³ ê° ë˜ëŠ” ê³ ê°ì½”ë“œê°€ â€˜2019â€™ë¡œ ì‹œìž‘í•˜ë©´ì„œ ì—¬ì„±ì¸ ê³ ê°ì„ êµ¬í•˜ê³ , ê·¸ ì¤‘ ëˆ„ì í¬ì¸íŠ¸ê°€ 30000 ì´í•˜ì¸ ë°ì´í„°ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select customer_cd, customer_nm, mw_flg, birth_day, total_point 
 from tb_customer 
-where customer_cd like '2017%'
-and mw_flg = 'M' 
+where (customer_cd like '2017%'
+and mw_flg = 'M'
 or customer_cd like '2019%'
-and mw_flg = 'F'
+and mw_flg = 'W')
 and total_point <= 30000;
 
--- ¿¬½À¹®Á¦ 11. IN ¿¬»êÀÚ 
--- Ç°¸ñÁ¤º¸ Å×ÀÌºí¿¡¼­ Ç°¸ñÄÚµå°¡ 'S01¡¯, ¡®S04¡¯, ¡®S06¡¯, ¡®S10¡¯ÀÎ µ¥ÀÌÅÍ¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 11. IN ì—°ì‚°ìž 
+-- í’ˆëª©ì •ë³´ í…Œì´ë¸”ì—ì„œ í’ˆëª©ì½”ë“œê°€ 'S01â€™, â€˜S04â€™, â€˜S06â€™, â€˜S10â€™ì¸ ë°ì´í„°ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select * from tb_item_info where item_cd in ('S01', 'S04', 'S06', 'S10');
 
--- ¿¬½À¹®Á¦ 12. IN ¿¬»êÀÚ 
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ °í°´ÄÚµå°¡ ¡®2017042¡¯ ¶Ç´Â ¡®2018087¡¯ ¶Ç´Â '2019095' ÀÌ¸é¼­ Æ÷ÀÎÆ®³»¿ë¿¡ ¡®±¸¸Å¡¯ ¹®ÀÚ°¡ Æ÷ÇÔµÈ µ¥ÀÌÅÍ¸¦ °Ë»öÇÑ´Ù.
-select * from tb_point where customer_cd in ('2017042', '2018087', '2019095') and point_memo like '%±¸¸Å%';
+-- ì—°ìŠµë¬¸ì œ 12. IN ì—°ì‚°ìž 
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œê°€ â€˜2017042â€™ ë˜ëŠ” â€˜2018087â€™ ë˜ëŠ” '2019095' ì´ë©´ì„œ í¬ì¸íŠ¸ë‚´ìš©ì— â€˜êµ¬ë§¤â€™ ë¬¸ìžê°€ í¬í•¨ëœ ë°ì´í„°ë¥¼ ê²€ìƒ‰í•œë‹¤.
+select * from tb_point where customer_cd in ('2017042', '2018087', '2019095') and point_memo like '%êµ¬ë§¤%';
 
--- ¿¬½À¹®Á¦ 13. ORDER BY 
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ µî·ÏÀÏÀÌ '2019£§³âÀÌ°í Æ÷ÀÎÆ®³»¿ë¿¡ '±¸¸Å'°¡ Æ÷ÇÔµÈ µ¥ÀÌÅÍ¸¦ Æ÷ÀÎÆ®°¡ Å« ¼ø¼­´ë·Î °Ë»öÇÑ´Ù.
-select * from tb_point where substr(reg_dttm, 1, 4) = 2019 and point_memo like '%±¸¸Å%' order by point desc;
+-- ì—°ìŠµë¬¸ì œ 13. ORDER BY 
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ ë“±ë¡ì¼ì´ '2019ï¼‡ë…„ì´ê³  í¬ì¸íŠ¸ë‚´ìš©ì— 'êµ¬ë§¤'ê°€ í¬í•¨ëœ ë°ì´í„°ë¥¼ í¬ì¸íŠ¸ê°€ í° ìˆœì„œëŒ€ë¡œ ê²€ìƒ‰í•œë‹¤.
+select * from tb_point where substr(reg_dttm, 1, 4) = 2019 and point_memo like '%êµ¬ë§¤%' order by point desc;
 
--- ¿¬½À¹®Á¦ 14. ORDER BY 
--- ¼ºÀû Å×ÀÌºí¿¡¼­ ¡®B¡¯¹ÝÀÇ ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼öÀÇ ÇÕ°è°¡ ³ôÀº ¼øÀ¸·Î °Ë»öÇÑ´Ù.
-select kor, eng, mat, tot ÇÕ°è from tb_grade where class_cd = 'B' order by tot desc;
+-- ì—°ìŠµë¬¸ì œ 14. ORDER BY 
+-- ì„±ì  í…Œì´ë¸”ì—ì„œ â€˜Bâ€™ë°˜ì˜ êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ì˜ í•©ê³„ê°€ ë†’ì€ ìˆœìœ¼ë¡œ ê²€ìƒ‰í•œë‹¤.
+select kor, eng, mat, tot í•©ê³„ from tb_grade where class_cd = 'B' order by tot desc;
 
--- ¿¬½À¹®Á¦ 15. GROUP BY
--- ÆÇ¸Å Å×ÀÌºí¿¡¼­ ÆÇ¸ÅÀÏÀÌ ¡®20190802¡¯ ¶Ç´Â ¡®20190803¡¯À» ´ë»óÀ¸·Î ÆÇ¸ÅÀÏ°ú »óÇ°¸íÀ¸·Î ±×·ìÈ­ÇØ ÃÑÆÇ¸Å¼ö¸¦ ±¸ÇÏ°í ÆÇ¸ÅÀÏ°ú »óÇ°¸íÀº °¡³ª´Ù ¼øÀ¸·Î Á¤·ÄÇÑ´Ù.
-select sales_dt, product_nm, sum(sales_count) ÃÑÆÇ¸Å¼ö
+-- ì—°ìŠµë¬¸ì œ 15. GROUP BY
+-- íŒë§¤ í…Œì´ë¸”ì—ì„œ íŒë§¤ì¼ì´ â€˜20190802â€™ ë˜ëŠ” â€˜20190803â€™ì„ ëŒ€ìƒìœ¼ë¡œ íŒë§¤ì¼ê³¼ ìƒí’ˆëª…ìœ¼ë¡œ ê·¸ë£¹í™”í•´ ì´íŒë§¤ìˆ˜ë¥¼ êµ¬í•˜ê³  íŒë§¤ì¼ê³¼ ìƒí’ˆëª…ì€ ê°€ë‚˜ë‹¤ ìˆœìœ¼ë¡œ ì •ë ¬í•œë‹¤.
+select sales_dt, product_nm, sum(sales_count) ì´íŒë§¤ìˆ˜
 from tb_sales
 where sales_dt in ('20190802', '20190803')
 group by sales_dt, product_nm
 order by sales_dt, product_nm;
 
--- ¿¬½À¹®Á¦ 16. DISTINCT 
--- ÆÇ¸Å Å×ÀÌºí¿¡¼­ '20190801£§¿¡¼­ ¡®20190802¡¯ ±â°£¿¡ ÆÇ¸ÅÇÑ »óÇ°¸íÀ» °¡³ª´Ù ¼øÀ¸·Î Áßº¹¾øÀÌ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 16. DISTINCT 
+-- íŒë§¤ í…Œì´ë¸”ì—ì„œ '20190801ï¼‡ì—ì„œ â€˜20190802â€™ ê¸°ê°„ì— íŒë§¤í•œ ìƒí’ˆëª…ì„ ê°€ë‚˜ë‹¤ ìˆœìœ¼ë¡œ ì¤‘ë³µì—†ì´ ê²€ìƒ‰í•œë‹¤.
 select distinct product_nm 
 from tb_sales 
 where sales_dt in ('20190801', '20190802') 
 order by product_nm; 
 ?
--- ¿¬½À¹®Á¦ 17. JOIN
--- °í°´ Å×ÀÌºíÀÇ °í°´ÄÚµå°¡ 2019069 µ¥ÀÌÅÍ¸¦ °í°´Æ÷ÀÎÆ® Å×ÀÌºí°ú ¿¬°ü °Ë»öÇÏ¿© °í°´ Å×ÀÌºí¿¡¼­´Â °í°´ÄÚµå, °í°´¸í, ¼ºº°À» °Ë»öÇÑ ÈÄ °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­´Â ÀÏ·Ã¹øÈ£, Æ÷ÀÎÆ®³»¿ë, Æ÷ÀÎÆ®¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 17. JOIN
+-- ê³ ê° í…Œì´ë¸”ì˜ ê³ ê°ì½”ë“œê°€ 2019069 ë°ì´í„°ë¥¼ ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ê³¼ ì—°ê´€ ê²€ìƒ‰í•˜ì—¬ ê³ ê° í…Œì´ë¸”ì—ì„œëŠ” ê³ ê°ì½”ë“œ, ê³ ê°ëª…, ì„±ë³„ì„ ê²€ìƒ‰í•œ í›„ ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œëŠ” ì¼ë ¨ë²ˆí˜¸, í¬ì¸íŠ¸ë‚´ìš©, í¬ì¸íŠ¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select a.customer_cd, a.customer_nm, a.mw_flg, b.seq_no, b.point_memo, b.point 
 from tb_customer a, tb_point b
 where a.customer_cd = b.customer_cd
 and a.customer_cd = 2019069;
 
--- ¿¬½À¹®Á¦ 18. CASE
--- °í°´ Å×ÀÌºí¿¡¼­ ´©ÀûÆ÷ÀÎÆ®°¡ 1,000¿¡¼­ 20,000¹Ì¸¸ÀÌ¸é ¡°½Ç¹ö¡±, 20,000¿¡¼­ 50,000¹Ì¸¸ ÀÌ¸é ¡°°ñµå¡±, 50,000ÀÌ»óÀÌ¸é ¡°VIP¡± µî±ÞÀ» º¸ÀÌ°í À§ Á¶°Ç¿¡ ÇØ´ç ¾øÀ¸¸é ¡°ÀÏ¹Ý¡± µî±ÞÀ» º¸ÀÎ´Ù.       
+-- ì—°ìŠµë¬¸ì œ 18. CASE
+-- ê³ ê° í…Œì´ë¸”ì—ì„œ ëˆ„ì í¬ì¸íŠ¸ê°€ 1,000ì—ì„œ 20,000ë¯¸ë§Œì´ë©´ â€œì‹¤ë²„â€, 20,000ì—ì„œ 50,000ë¯¸ë§Œ ì´ë©´ â€œê³¨ë“œâ€, 50,000ì´ìƒì´ë©´ â€œVIPâ€ ë“±ê¸‰ì„ ë³´ì´ê³  ìœ„ ì¡°ê±´ì— í•´ë‹¹ ì—†ìœ¼ë©´ â€œì¼ë°˜â€ ë“±ê¸‰ì„ ë³´ì¸ë‹¤.       
 select customer_cd, customer_nm, total_point,
-    case when total_point >= 1000 and total_point < 20000 then '½Ç¹ö'
-        when total_point >= 20000 and total_point < 50000 then '°ñµå'
+    case when total_point >= 1000 and total_point < 20000 then 'ì‹¤ë²„'
+        when total_point >= 20000 and total_point < 50000 then 'ê³¨ë“œ'
         when total_point >= 50000 then 'VIP'
-        else 'ÀÏ¹Ý'
+        else 'ì¼ë°˜'
         end as total_point
 from tb_customer;
--- ¿¬½À¹®Á¦ 19. ROWNUM
--- ¼ºÀû Å×ÀÌºí¿¡¼­ ¹ÝÄÚµå°¡ ¡®A¡¯ ¶Ç´Â ¡®C¡¯¹ÝÀÇ ÇÐ»ýÀ» ´ë»óÀ¸·Î ¸ðµç ÇÊµå¿Í ¼øÂ÷ÀûÀÎ Çà¹øÈ£¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 19. ROWNUM
+-- ì„±ì  í…Œì´ë¸”ì—ì„œ ë°˜ì½”ë“œê°€ â€˜Aâ€™ ë˜ëŠ” â€˜Câ€™ë°˜ì˜ í•™ìƒì„ ëŒ€ìƒìœ¼ë¡œ ëª¨ë“  í•„ë“œì™€ ìˆœì°¨ì ì¸ í–‰ë²ˆí˜¸ë¥¼ ê²€ìƒ‰í•œë‹¤.
 select rownum, class_cd, student_no, student_nm, kor, eng, mat, tot, avg from tb_grade where class_cd = 'A' or class_cd = 'C';
 
--- ¿¬½À¹®Á¦ 20. NULL
--- °í°´ Å×ÀÌºí¿¡¼­ °í°´ÄÚµå°¡ ¡®2018¡¯ ¶Ç´Â ¡®2019¡¯·Î ½ÃÀÛÇÏ°í, »ýÀÏÀÌ 1990³â ¶Ç´Â 2000³â ´ëÀÎ °í°´ Áß ÀüÈ­¹øÈ£°¡ ¼³Á¤µÇ¾î ÀÖ´Â µ¥ÀÌÅÍ¸¦ °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 20. NULL
+-- ê³ ê° í…Œì´ë¸”ì—ì„œ ê³ ê°ì½”ë“œê°€ â€˜2018â€™ ë˜ëŠ” â€˜2019â€™ë¡œ ì‹œìž‘í•˜ê³ , ìƒì¼ì´ 1990ë…„ ë˜ëŠ” 2000ë…„ ëŒ€ì¸ ê³ ê° ì¤‘ ì „í™”ë²ˆí˜¸ê°€ ì„¤ì •ë˜ì–´ ìžˆëŠ” ë°ì´í„°ë¥¼ ê²€ìƒ‰í•œë‹¤.
 ?select * from tb_customer where ;
 select * from tb_customer 
 where (customer_cd like '2018%' or customer_cd like '2019%') 
 and (birth_day like '199%' or birth_day like '200%')
 and phone_number is not null;
 
--- ¿¬½À¹®Á¦ 21. DUAL
--- DUAL Å×ÀÌºí·Î 300¡À60°ú ¿À´Ã ³¯Â¥¿Í 30ÀÏ ÀÌÈÄÀÇ ³¯Â¥¸¦ 'YYYY-MM-DD' Çü½ÄÀ¸·Î º¸ÀÎ´Ù. Âü°í·Î 'YYYY-MM-DD' Çü½ÄÀº CHAR() ÇÔ¼ö¿¡ ÇöÀç³¯Â¥¿Í 'YYYY-MM-DD' Çü½ÄÀ» ¿É¼ÇÀ¸·Î ÀÔ·ÂÇØ º¸ÀÎ´Ù.
-?
--- ¿¬½À¹®Á¦ 22. ¼­ºêÄõ¸®
--- ¼ºÀû Å×ÀÌºí¿¡¼­ ¹ÝÄÚµå°¡ ¡®A¡¯ ¶Ç´Â ¡®C¡¯¹ÝÀÇ ÇÐ»ýÀ» ´ë»óÀ¸·Î ÇÕ°è°¡ ¸¹Àº ¼øÀ¸·Î Çà¹øÈ£¸¦ º¸ÀÎ´Ù. (°¡Àå ³ôÀº Á¡¼ö°¡ 1µîÀÌ´Ù.)
--- ¾Æ·¡ ÄÚµå ½ÇÇà
+-- ì—°ìŠµë¬¸ì œ 21. DUAL
+-- DUAL í…Œì´ë¸”ë¡œ 300Ã·60ê³¼ ì˜¤ëŠ˜ ë‚ ì§œì™€ 30ì¼ ì´í›„ì˜ ë‚ ì§œë¥¼ 'YYYY-MM-DD' í˜•ì‹ìœ¼ë¡œ ë³´ì¸ë‹¤. ì°¸ê³ ë¡œ 'YYYY-MM-DD' í˜•ì‹ì€ CHAR() í•¨ìˆ˜ì— í˜„ìž¬ë‚ ì§œì™€ 'YYYY-MM-DD' í˜•ì‹ì„ ì˜µì…˜ìœ¼ë¡œ ìž…ë ¥í•´ ë³´ì¸ë‹¤.
+select 300/60, to_char(sysdate, 'YYYY-MM-DD') "ì˜¤ëŠ˜ ë‚ ì§œ", to_char(sysdate + 30, 'YYYY-MM-DD') "30ì¼ í›„ ë‚ ì§œ" from dual;?
+
+-- ì—°ìŠµë¬¸ì œ 22. ì„œë¸Œì¿¼ë¦¬
+-- ì„±ì  í…Œì´ë¸”ì—ì„œ ë°˜ì½”ë“œê°€ â€˜Aâ€™ ë˜ëŠ” â€˜Câ€™ë°˜ì˜ í•™ìƒì„ ëŒ€ìƒìœ¼ë¡œ í•©ê³„ê°€ ë§Žì€ ìˆœìœ¼ë¡œ í–‰ë²ˆí˜¸ë¥¼ ë³´ì¸ë‹¤. (ê°€ìž¥ ë†’ì€ ì ìˆ˜ê°€ 1ë“±ì´ë‹¤.)
+-- ì•„ëž˜ ì½”ë“œ ì‹¤í–‰
 UPDATE TB_GRADE
 SET    TOT = KOR + ENG + MAT,
        AVG = ROUND((KOR + ENG + MAT) / 3,1);
 SELECT * FROM TB_GRADE;
 COMMIT;
+-- ì½”ë“œ ìž‘ì„±
+select rownum ë“±ìˆ˜, class_cd, student_no, student_nm, kor, eng, mat, tot, avg 
+from (select * from tb_grade
+where class_cd = 'A' or class_cd = 'C'
+order by tot desc);
 
-UPDATE TB_GRADE
-SET    TOT = KOR + ENG + MAT,
-       AVG = ROUND((KOR + ENG + MAT) / 3,1);
-?
-SELECT * FROM TB_GRADE;
-?
--- ÄÚµå ÀÛ¼º
-?
--- ¿¬½À¹®Á¦ 23. EXISTS
--- °í°´Æ÷ÀÎÆ® Å×ÀÌºí¿¡¼­ Æ÷ÀÎÆ® ³»¿ë¿¡ ¡°ÀÌº¥Æ®¡±°¡ Æ÷ÇÔµÈ °í°´À» Ã£¾Æ °í°´ Å×ÀÌºí¿¡ °°Àº °í°´ÄÚµå°¡ Á¸ÀçÇÑ´Ù¸é °Ë»öÇÑ´Ù.
+-- ì—°ìŠµë¬¸ì œ 23. EXISTS
+-- ê³ ê°í¬ì¸íŠ¸ í…Œì´ë¸”ì—ì„œ í¬ì¸íŠ¸ ë‚´ìš©ì— â€œì´ë²¤íŠ¸â€ê°€ í¬í•¨ëœ ê³ ê°ì„ ì°¾ì•„ ê³ ê° í…Œì´ë¸”ì— ê°™ì€ ê³ ê°ì½”ë“œê°€ ì¡´ìž¬í•œë‹¤ë©´ ê²€ìƒ‰í•œë‹¤.
+SELECT *
+FROM   TB_CUSTOMER CU
+WHERE  EXISTS (SELECT 'A'
+               FROM   TB_POINT CP
+               WHERE  CP.CUSTOMER_CD = CU.CUSTOMER_CD
+               AND    CP.POINT_MEMO LIKE '%ì´ë²¤íŠ¸%');
