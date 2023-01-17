@@ -70,3 +70,8 @@
 + CNN(Convolution Neural Networks) : 컨볼루션 신경망
 + 파이토치 프레임워크 모델
 + kaggle 식물 병리학 이미지 분류
+
+**13일차**
++ 텍스트 마이닝
++ Bag Of Words 피처 벡터화
++ 감성분석(지도학습 기반, 비지도학습 기반)
