@@ -74,4 +74,11 @@
 **13일차**
 + 텍스트 마이닝
 + Bag Of Words 피처 벡터화
++ CountVectorizer vs TfidfVectorizer
 + 감성분석(지도학습 기반, 비지도학습 기반)
+
+**14일차**
++ 텍스트 마이닝
++ 
++ 
++ 
