@@ -87,3 +87,9 @@
 + OpenCV 라이브러리
 + Sharpening, Thresholding, Dilation, Erosion ,Blurring 등 구현
 + 이미지 속 특정 객체 잡기
+
+**15일차**
++ 비디오 캡처와 화면 표시
++ 유투브 영상 가져오기
++ 영상 가져와서 이미지 프로세싱
++ 비디오 속 객체 추적
