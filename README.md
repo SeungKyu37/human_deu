@@ -29,6 +29,7 @@
     + version : 11.2.0.1.0
     + 대용량의 Dataset을 활용하여 Data Handling 실습
     + 테이블 생성 및 select, join 등을 활용한 DB관리
+    + 참고 서적 : 오라클 SQL과 PL/SQL을 다루는 기술(홍형경)
 
 + **Spring - JAVA EE**
     + 2022.11.28 ~ 2022.12.16
@@ -50,6 +51,8 @@
     + 2022.12.22 ~ 2023.01.27
     + version : 3.11.1
     + 사용툴 : `vs code`
-    + 파이썬 기초 문법, 웹 크롤링
-    + 주요 라이브러리 : numpy, pandas, plotly
-    + 참고 서적 : 머신러닝, 딥러닝 실전개발 입문
+    + 파이썬 기초 문법, 웹 크롤링, 머신러닝, 딥러닝, 웹 개발
+    + 주요 라이브러리 : numpy, pandas, plotly, matplotlib, seaborn, scikit-learn, streamlit, flask
+    + 참고 서적 : 머신러닝, 딥러닝 실전개발 입문(쿠지라 히코우즈쿠에, 윤인성 옮김), Django를 활용한 쉽고 빠른 웹 개발 파이썬 웹 프로그래밍(김석훈)
+    + 프로젝트
+        - [내 방 어디](https://github.com/SeungKyu37/project2)
