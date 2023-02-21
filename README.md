@@ -51,7 +51,7 @@
     + 2022.12.22 ~ 2023.01.27
     + version : 3.11.1
     + 사용툴 : `vs code`, `google colab`, `jupyter notebook`
-    + 파이썬 기초 문법, 웹 크롤링, 웹 개발
+    + 파이썬 기초 문법, 웹 크롤링, 머신러닝, 딥러닝, 웹 개발
     + 주요 라이브러리 : numpy, pandas, matplotlib, plotly, seaborn, scikit-learn, streamlit, flask
     + 참고 서적 : 머신러닝, 딥러닝 실전개발 입문(쿠지라 히코우즈쿠에, 윤인성 옮김), Django를 활용한 쉽고 빠른 웹 개발 파이썬 웹 프로그래밍(김석훈)
     + 프로젝트
