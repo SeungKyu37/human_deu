@@ -93,3 +93,23 @@
 + 유튜브 영상 가져오기
 + 영상 가져와서 이미지 프로세싱
 + 비디오 속 객체 추적
+
+**17일차**
++ 추천 시스템
++ Content Based Filtering
++ Collaborative Filtering(Memory Based, Latent Factor (잠재요인) 협업 필터링)
++ Surprise 라이브러리
++ 파이썬 웹 개발
++ streamlit 라이브러리
+
+**18일차**
++ streamlit 라이브러리
++ container 활용
++ bmi 계산기 사이트 만들기
++ iris 데이터를 이용해 머신러닝 대시보드 만들기
+
+**19일차**
++ 파이썬 웹개발
++ flask 라이브러리
++ 미디어 파일 불러오기
++ db 연동
